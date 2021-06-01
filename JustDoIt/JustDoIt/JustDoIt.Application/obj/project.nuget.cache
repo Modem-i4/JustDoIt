@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ydVtdR5oxxKHqTXiwwJIsch40xlBqI+CX5L6o6C18qTVAMSypf0eoXnhPXkV0/z8s8DYA5d/KJ1ouDCSbRhBsQ==",
+  "dgSpecHash": "mZL6mVeu/hnPNGnoNq8jI11q0UnrKdkdarwQTvx38haPTG2K31a7WCuVuqg3Zv1TibNffuaR18flXvFZeR7o8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gorna\\Source\\Repos\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj",
+  "projectFilePath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gorna\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\gorna\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",

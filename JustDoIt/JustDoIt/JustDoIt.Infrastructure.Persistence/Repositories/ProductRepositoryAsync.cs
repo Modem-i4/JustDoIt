@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace JustDoIt.Infrastructure.Persistence.Repositories
 {
-    public class ProductRepositoryAsync : GenericRepositoryAsync<Product>, IProductRepositoryAsync
+    public class ProductRepositoryAsync : GenericRepositoryAsync<Desk>, IDeskRepositoryAsync
     {
-        private readonly DbSet<Product> _products;
+        private readonly DbSet<Desk> _products;
 
         public ProductRepositoryAsync(ApplicationDbContext dbContext) : base(dbContext)
         {
-            _products = dbContext.Set<Product>();
+            _products = dbContext.Set<Desk>();
         }
 
         public Task<bool> IsUniqueBarcodeAsync(string barcode)

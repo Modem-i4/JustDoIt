@@ -12,9 +12,9 @@ namespace JustDoIt.Application.Mappings
     {
         public GeneralProfile()
         {
-            CreateMap<Product, GetAllProductsViewModel>().ReverseMap();
-            CreateMap<CreateProductCommand, Product>();
-            CreateMap<GetAllProductsQuery, GetAllProductsParameter>();
+            CreateMap<Desk, GetAllDesksViewModel>().ReverseMap();
+            CreateMap<CreateDeskCommand, Desk>();
+            CreateMap<GetAllDesksQuery, GetAllDesksParameter>();
         }
     }
 }

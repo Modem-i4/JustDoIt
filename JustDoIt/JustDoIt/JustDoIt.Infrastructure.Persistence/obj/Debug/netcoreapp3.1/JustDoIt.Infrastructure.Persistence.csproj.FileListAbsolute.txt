@@ -1,0 +1,14 @@
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\bin\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.deps.json
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\bin\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\bin\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.pdb
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\bin\Debug\netcoreapp3.1\JustDoIt.Application.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\bin\Debug\netcoreapp3.1\JustDoIt.Domain.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\bin\Debug\netcoreapp3.1\JustDoIt.Application.pdb
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\bin\Debug\netcoreapp3.1\JustDoIt.Domain.pdb
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.csprojAssemblyReference.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.AssemblyInfoInputs.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.AssemblyInfo.cs
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.csproj.CopyComplete
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Persistence\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.pdb
