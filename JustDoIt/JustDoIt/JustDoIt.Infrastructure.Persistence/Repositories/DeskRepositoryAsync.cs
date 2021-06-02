@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace JustDoIt.Infrastructure.Persistence.Repositories
 {
-    public class ProductRepositoryAsync : GenericRepositoryAsync<Desk>, IDeskRepositoryAsync
+    public class DeskRepositoryAsync : GenericRepositoryAsync<Desk>, IDeskRepositoryAsync
     {
-        private readonly DbSet<Desk> _products;
+        private readonly DbSet<Desk> _desks;
 
-        public ProductRepositoryAsync(ApplicationDbContext dbContext) : base(dbContext)
+        public DeskRepositoryAsync(ApplicationDbContext dbContext) : base(dbContext)
         {
-            _products = dbContext.Set<Desk>();
+            _desks = dbContext.Set<Desk>();
         }
 
-        public Task<bool> IsUniqueBarcodeAsync(string barcode)
+        /*public Task<bool> IsUniqueBarcodeAsync(string barcode)
         {
             return _products
                 .AllAsync(p => p.Barcode != barcode);
-        }
+        }*/
     }
 }

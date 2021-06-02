@@ -1,3 +1,8 @@
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.csprojAssemblyReference.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.AssemblyInfoInputs.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.AssemblyInfo.cs
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\bin\Debug\netcoreapp3.1\JustDoIt.WebApi.exe
@@ -175,12 +180,6 @@ C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\bin\Debug\
 C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\bin\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Persistence.pdb
 C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\bin\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.pdb
 C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\bin\Debug\netcoreapp3.1\JustDoIt.Domain.pdb
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.csprojAssemblyReference.cache
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.AssemblyInfoInputs.cache
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.AssemblyInfo.cs
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.csproj.CoreCompileInputs.cache
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\JustDoIt.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\JustDoIt.WebApi.StaticWebAssets.Manifest.cache
 C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\JustDoIt.WebApi.StaticWebAssets.xml
 C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.WebApi\obj\Debug\netcoreapp3.1\scopedcss\bundle\JustDoIt.WebApi.styles.css
