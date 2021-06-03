@@ -3475,10 +3475,7 @@
         },
         "runtime": {
           "bin/placeholder/JustDoIt.Infrastructure.Identity.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "JustDoIt.Infrastructure.Persistence/1.1.0": {
         "type": "project",
@@ -10650,19 +10647,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gorna\\.nuget\\packages\\": {}
+    "C:\\Users\\vasea\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.WebApi\\JustDoIt.WebApi.csproj",
+      "projectUniqueName": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.WebApi\\JustDoIt.WebApi.csproj",
       "projectName": "JustDoIt.WebApi",
-      "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.WebApi\\JustDoIt.WebApi.csproj",
-      "packagesPath": "C:\\Users\\gorna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.WebApi\\obj\\",
+      "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.WebApi\\JustDoIt.WebApi.csproj",
+      "packagesPath": "C:\\Users\\vasea\\.nuget\\packages\\",
+      "outputPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gorna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vasea\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10676,17 +10673,17 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj": {
-              "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj"
+            "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj": {
+              "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj"
             },
-            "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\JustDoIt.Infrastructure.Identity.csproj": {
-              "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\JustDoIt.Infrastructure.Identity.csproj"
+            "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\JustDoIt.Infrastructure.Identity.csproj": {
+              "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\JustDoIt.Infrastructure.Identity.csproj"
             },
-            "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Persistence\\JustDoIt.Infrastructure.Persistence.csproj": {
-              "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Persistence\\JustDoIt.Infrastructure.Persistence.csproj"
+            "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Persistence\\JustDoIt.Infrastructure.Persistence.csproj": {
+              "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Persistence\\JustDoIt.Infrastructure.Persistence.csproj"
             },
-            "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj": {
-              "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj"
+            "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj": {
+              "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj"
             }
           }
         }
@@ -10774,7 +10771,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

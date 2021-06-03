@@ -31,6 +31,7 @@ namespace JustDoIt.Infrastructure.Persistence
             #region Repositories
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             services.AddTransient<IDeskRepositoryAsync, DeskRepositoryAsync>();
+            services.AddTransient<IColumnRepositoryAsync, ColumnRepositoryAsync>();
             #endregion
         }
     }

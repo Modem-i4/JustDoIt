@@ -19,6 +19,38 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("JustDoIt.Domain.Entities.Column", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DeskId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("LastModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeskId");
+
+                    b.ToTable("Columns");
+                });
+
             modelBuilder.Entity("JustDoIt.Domain.Entities.Desk", b =>
                 {
                     b.Property<int>("Id")
@@ -50,6 +82,15 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Desks");
+                });
+
+            modelBuilder.Entity("JustDoIt.Domain.Entities.Column", b =>
+                {
+                    b.HasOne("JustDoIt.Domain.Entities.Desk", "Desk")
+                        .WithMany()
+                        .HasForeignKey("DeskId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

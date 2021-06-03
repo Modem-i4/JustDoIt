@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj": {}
+    "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj": {
+    "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj",
+        "projectUniqueName": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj",
         "projectName": "JustDoIt.Application",
-        "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj",
-        "packagesPath": "C:\\Users\\gorna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\obj\\",
+        "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj",
+        "packagesPath": "C:\\Users\\vasea\\.nuget\\packages\\",
+        "outputPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gorna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vasea\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj": {
-                "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj"
+              "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj": {
+                "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj"
               }
             }
           }
@@ -96,21 +96,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj": {
+    "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj",
+        "projectUniqueName": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj",
         "projectName": "JustDoIt.Domain",
-        "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj",
-        "packagesPath": "C:\\Users\\gorna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\obj\\",
+        "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\JustDoIt.Domain.csproj",
+        "packagesPath": "C:\\Users\\vasea\\.nuget\\packages\\",
+        "outputPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gorna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vasea\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -150,21 +150,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj": {
+    "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj",
+        "projectUniqueName": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj",
         "projectName": "JustDoIt.Infrastructure.Shared",
-        "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj",
-        "packagesPath": "C:\\Users\\gorna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\obj\\",
+        "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\JustDoIt.Infrastructure.Shared.csproj",
+        "packagesPath": "C:\\Users\\vasea\\.nuget\\packages\\",
+        "outputPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gorna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vasea\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -178,8 +178,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj": {
-                "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj"
+              "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj": {
+                "projectPath": "E:\\GitProjects\\_repos\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj"
               }
             }
           }
@@ -222,7 +222,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
