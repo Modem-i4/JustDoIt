@@ -1,8 +1,0 @@
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Domain\bin\Debug\netstandard2.1\JustDoIt.Domain.deps.json
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Domain\bin\Debug\netstandard2.1\JustDoIt.Domain.dll
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Domain\bin\Debug\netstandard2.1\JustDoIt.Domain.pdb
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Domain\obj\Debug\netstandard2.1\JustDoIt.Domain.AssemblyInfoInputs.cache
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Domain\obj\Debug\netstandard2.1\JustDoIt.Domain.AssemblyInfo.cs
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Domain\obj\Debug\netstandard2.1\JustDoIt.Domain.csproj.CoreCompileInputs.cache
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Domain\obj\Debug\netstandard2.1\JustDoIt.Domain.dll
-C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Domain\obj\Debug\netstandard2.1\JustDoIt.Domain.pdb

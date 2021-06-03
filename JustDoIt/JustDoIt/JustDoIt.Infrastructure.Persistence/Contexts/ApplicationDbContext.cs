@@ -24,6 +24,7 @@ namespace JustDoIt.Infrastructure.Persistence.Contexts
             _authenticatedUser = authenticatedUser;
         }
         public DbSet<Desk> Desks { get; set; }
+        public DbSet<Column> Columns { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
