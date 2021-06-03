@@ -1,0 +1,14 @@
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\bin\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.deps.json
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\bin\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\bin\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.pdb
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\bin\Debug\netcoreapp3.1\JustDoIt.Application.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\bin\Debug\netcoreapp3.1\JustDoIt.Domain.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\bin\Debug\netcoreapp3.1\JustDoIt.Application.pdb
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\bin\Debug\netcoreapp3.1\JustDoIt.Domain.pdb
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.csprojAssemblyReference.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.AssemblyInfoInputs.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.AssemblyInfo.cs
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.csproj.CoreCompileInputs.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.csproj.CopyComplete
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Infrastructure.Shared\obj\Debug\netcoreapp3.1\JustDoIt.Infrastructure.Shared.pdb

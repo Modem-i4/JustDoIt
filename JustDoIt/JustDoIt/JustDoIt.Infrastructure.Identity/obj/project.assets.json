@@ -5916,11 +5916,11 @@
   "project": {
     "version": "1.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gorna\\Source\\Repos\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\JustDoIt.Infrastructure.Identity.csproj",
+      "projectUniqueName": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\JustDoIt.Infrastructure.Identity.csproj",
       "projectName": "JustDoIt.Infrastructure.Identity",
-      "projectPath": "C:\\Users\\gorna\\Source\\Repos\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\JustDoIt.Infrastructure.Identity.csproj",
+      "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\JustDoIt.Infrastructure.Identity.csproj",
       "packagesPath": "C:\\Users\\gorna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gorna\\Source\\Repos\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\obj\\",
+      "outputPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Infrastructure.Identity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gorna\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5937,8 +5937,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\gorna\\Source\\Repos\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj": {
-              "projectPath": "C:\\Users\\gorna\\Source\\Repos\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj"
+            "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj": {
+              "projectPath": "C:\\Users\\gorna\\Desktop\\git\\JustDoIt\\JustDoIt\\JustDoIt\\JustDoIt.Application\\JustDoIt.Application.csproj"
             }
           }
         }

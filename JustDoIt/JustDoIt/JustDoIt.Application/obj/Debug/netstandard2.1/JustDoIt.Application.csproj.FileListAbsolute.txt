@@ -1,0 +1,12 @@
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\bin\Debug\netstandard2.1\JustDoIt.Application.deps.json
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\bin\Debug\netstandard2.1\JustDoIt.Application.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\bin\Debug\netstandard2.1\JustDoIt.Application.pdb
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\bin\Debug\netstandard2.1\JustDoIt.Domain.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\bin\Debug\netstandard2.1\JustDoIt.Domain.pdb
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\obj\Debug\netstandard2.1\JustDoIt.Application.csprojAssemblyReference.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\obj\Debug\netstandard2.1\JustDoIt.Application.AssemblyInfoInputs.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\obj\Debug\netstandard2.1\JustDoIt.Application.AssemblyInfo.cs
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\obj\Debug\netstandard2.1\JustDoIt.Application.csproj.CoreCompileInputs.cache
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\obj\Debug\netstandard2.1\JustDoIt.Application.csproj.CopyComplete
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\obj\Debug\netstandard2.1\JustDoIt.Application.dll
+C:\Users\gorna\Desktop\git\JustDoIt\JustDoIt\JustDoIt\JustDoIt.Application\obj\Debug\netstandard2.1\JustDoIt.Application.pdb
