@@ -27,9 +27,8 @@ namespace JustDoIt.Application.Features.Tasks.Queries.GetColumnTasks
 
         public async Task<Response<IEnumerable<GetColumnTasksViewModel>>> Handle(GetColumnTasksQuery request, CancellationToken cancellationToken)
         {
-            //TODO: implify filter
             var validFilter = _mapper.Map<GetColumnTasksParameter>(request);
-            var task = await _taskRepository.GetTasksByDeskId(validFilter);
+            var task = await _taskRepository.GetTasksByColumnId(validFilter);
             var taskViewModel = _mapper.Map<IEnumerable<GetColumnTasksViewModel>>(task);
             return new Response<IEnumerable<GetColumnTasksViewModel>>(taskViewModel);
         }
