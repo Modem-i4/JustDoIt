@@ -4,14 +4,16 @@ using JustDoIt.Infrastructure.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JustDoIt.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210603091630_ColumnInit")]
+    partial class ColumnInit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,7 +34,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DeskId")
+                    b.Property<int?>("DeskId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("LastModified")
@@ -88,9 +90,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                 {
                     b.HasOne("JustDoIt.Domain.Entities.Desk", "Desk")
                         .WithMany()
-                        .HasForeignKey("DeskId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DeskId");
                 });
 #pragma warning restore 612, 618
         }

@@ -36,7 +36,7 @@ namespace JustDoIt.WebApi.Controllers.v1
 
         // POST api/<controller>
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> Post(CreateDeskCommand command)
         {
             return Ok(await Mediator.Send(command));
@@ -44,7 +44,7 @@ namespace JustDoIt.WebApi.Controllers.v1
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> Put(int id, UpdateDeskCommand command)
         {
             if (id != command.Id)
@@ -56,7 +56,7 @@ namespace JustDoIt.WebApi.Controllers.v1
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await Mediator.Send(new DeleteDeskByIdCommand { Id = id }));
