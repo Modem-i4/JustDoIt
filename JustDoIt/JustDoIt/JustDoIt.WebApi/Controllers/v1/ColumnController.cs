@@ -5,11 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using JustDoIt.Application.Features.Products.Queries.GetAllProducts;
 using JustDoIt.Application.Features.Columns.Queries.GetDeskColumn;
-using JustDoIt.Application.Columns.Columns.Commands.CreateColumn;
-using JustDoIt.Application.Columns.Products.Commands.UpdateColumn;
-using JustDoIt.Application.Columns.Products.Commands.DeleteColumnById;
+using JustDoIt.Application.Features.Columns.Commands.CreateColumn;
+using JustDoIt.Application.Features.Columns.Commands.UpdateColumn;
+using JustDoIt.Application.Features.Columns.Commands.DeleteColumnById;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

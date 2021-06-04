@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Columns.Products.Commands.DeleteColumnById
+namespace JustDoIt.Application.Features.Columns.Commands.DeleteColumnById
 {
     public class DeleteColumnByIdCommand : IRequest<Response<int>>
     {

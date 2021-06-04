@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Columns.Products.Commands.UpdateColumn
+namespace JustDoIt.Application.Features.Columns.Commands.UpdateColumn
 {
     public class UpdateColumnCommand : IRequest<Response<int>>
     {

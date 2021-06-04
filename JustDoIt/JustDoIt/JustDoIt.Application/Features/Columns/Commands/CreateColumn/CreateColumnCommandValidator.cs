@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using JustDoIt.Application.Columns.Columns.Commands.CreateColumn;
+using JustDoIt.Application.Features.Columns.Commands.CreateColumn;
 using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Columns.Products.Commands.CreateColumn
+namespace JustDoIt.Application.Features.Columns.Commands.CreateColumn
 {
     public class CreateColumnCommandValidator : AbstractValidator<CreateColumnCommand>
     {

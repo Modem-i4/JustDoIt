@@ -6,7 +6,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Columns.Columns.Commands.CreateColumn
+namespace JustDoIt.Application.Features.Columns.Commands.CreateColumn
 {
     public partial class CreateColumnCommand : IRequest<Response<int>>
     {
