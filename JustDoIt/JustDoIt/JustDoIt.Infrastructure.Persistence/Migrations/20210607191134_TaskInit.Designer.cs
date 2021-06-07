@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JustDoIt.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210607185303_TaskInit")]
+    [Migration("20210607191134_TaskInit")]
     partial class TaskInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

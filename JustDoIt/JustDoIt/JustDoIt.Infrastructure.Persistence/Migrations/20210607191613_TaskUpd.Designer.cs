@@ -4,14 +4,16 @@ using JustDoIt.Infrastructure.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JustDoIt.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210607191613_TaskUpd")]
+    partial class TaskUpd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,7 +129,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ParentTaskId");
 
-                    b.ToTable("TaskModels");
+                    b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("JustDoIt.Domain.Entities.Column", b =>
@@ -150,7 +152,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.HasOne("JustDoIt.Domain.Entities.TaskModel", "ParentTask")
                         .WithMany()
                         .HasForeignKey("ParentTaskId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

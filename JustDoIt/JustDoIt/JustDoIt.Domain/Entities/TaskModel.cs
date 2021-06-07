@@ -12,8 +12,8 @@ namespace JustDoIt.Domain.Entities
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int ColumnId { get; set; }
-        //public int ParentTaskId { get; set; }
         public Column Column { get; set; }
-        //public TaskModel ParentTask { get; set; }
+        public int ParentTaskId { get; set; }
+        public TaskModel ParentTask { get; set; }
     }
 }
