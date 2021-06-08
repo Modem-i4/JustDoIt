@@ -26,6 +26,7 @@ namespace JustDoIt.Infrastructure.Persistence.Contexts
         public DbSet<Desk> Desks { get; set; }
         public DbSet<Column> Columns { get; set; }
         public DbSet<TaskModel> Tasks { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
