@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using JustDoIt.Application.Enums;
 using JustDoIt.Application.Filters;
 using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Application.Wrappers;
@@ -13,7 +14,10 @@ namespace JustDoIt.Application.Features.Tasks.Queries.GetColumnTasks
 {
     public class GetColumnTasksQuery : IRequest<Response<IEnumerable<GetColumnTasksViewModel>>>
     {
-        public int ColumnId { get; set; }
+        public int DeskId { get; set; }
+        public TaskListModes TaskMode { get; set; }
+        public int TAmount { get; set; }
+
     }
     public class GetColumnTasksQueryHandler : IRequestHandler<GetColumnTasksQuery, Response<IEnumerable<GetColumnTasksViewModel>>>
     {
@@ -28,7 +32,7 @@ namespace JustDoIt.Application.Features.Tasks.Queries.GetColumnTasks
         public async Task<Response<IEnumerable<GetColumnTasksViewModel>>> Handle(GetColumnTasksQuery request, CancellationToken cancellationToken)
         {
             var validFilter = _mapper.Map<GetColumnTasksParameter>(request);
-            var task = await _taskRepository.GetTasksByColumnId(validFilter);
+            var task = await _taskRepository.GetTasksByFilter(validFilter);
             var taskViewModel = _mapper.Map<IEnumerable<GetColumnTasksViewModel>>(task);
             return new Response<IEnumerable<GetColumnTasksViewModel>>(taskViewModel);
         }

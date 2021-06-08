@@ -9,6 +9,9 @@ namespace JustDoIt.Application.Interfaces.Repositories
 {
     public interface ITaskRepositoryAsync : IGenericRepositoryAsync<TaskModel>
     {
-        Task<IEnumerable<TaskModel>> GetTasksByColumnId(GetColumnTasksParameter filter);
+        Task<IEnumerable<TaskModel>> GetTasksByFilter(GetColumnTasksParameter filter);
+        public Task<bool> HasSubtasks(int taskId);
+        Task<bool> IsAllSubtaskChecked(int parentId);
+       
     }
 }

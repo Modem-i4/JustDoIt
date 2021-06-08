@@ -10,5 +10,6 @@ namespace JustDoIt.Application.Interfaces.Repositories
     public interface IColumnRepositoryAsync : IGenericRepositoryAsync<Column>
     {
         Task<IEnumerable<Column>> GetColumnsByDeskId(GetDeskColumnsParameter filter);
+        Task<bool> ColumnExists(int columnId);
     }
 }

@@ -20,10 +20,13 @@ namespace JustDoIt.Infrastructure.Persistence.Repositories
         {
             _columns = dbContext.Set<Column>();
         }
-
         public async Task<IEnumerable<Column>> GetColumnsByDeskId(GetDeskColumnsParameter filter)
         {
             return await _columns.Where(o => o.DeskId == filter.DeskId).ToListAsync();
+        }
+        public Task<bool> ColumnExists(int columnId)
+        {
+            return _columns.AnyAsync(o => o.Id == columnId);
         }
     }
 }

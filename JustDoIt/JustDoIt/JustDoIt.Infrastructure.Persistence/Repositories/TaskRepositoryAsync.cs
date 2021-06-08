@@ -21,9 +21,32 @@ namespace JustDoIt.Infrastructure.Persistence.Repositories
             _tasks = dbContext.Set<TaskModel>();
         }
 
-        public async Task<IEnumerable<TaskModel>> GetTasksByColumnId(GetColumnTasksParameter filter)
+       
+
+        public async Task<IEnumerable<TaskModel>> GetTasksByFilter(GetColumnTasksParameter filter)
         {
-            return await _tasks.Where(o => o.ColumnId == filter.ColumnId).ToListAsync();
+            var baseQuery = _tasks.Include(o=>o.Column.Desk).Where(o => o.Column.DeskId == filter.DeskId);
+            switch (filter.TaskMode)
+            {
+                case Application.Enums.TaskListModes.ClosestDeadlines:
+                    return await _tasks.Where(o => o.EndDate > DateTime.Now & !o.Checked)
+                        .OrderBy(o => o.EndDate)
+                        .Take(filter.TAmount)
+                        .ToListAsync();
+                default:
+                    return await baseQuery.ToListAsync();
+            }
         }
+
+        public Task<bool> HasSubtasks(int taskId)
+        {
+            return _tasks.AnyAsync(o => o.ParentTaskId == taskId);
+        }
+
+        public Task<bool> IsAllSubtaskChecked(int parentId)
+        {
+            return _tasks.Where(o => o.ParentTaskId == parentId).AllAsync(o => o.Checked);
+        } 
+        
     }
 }

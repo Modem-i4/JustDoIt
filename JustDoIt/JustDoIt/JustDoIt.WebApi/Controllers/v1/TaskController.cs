@@ -21,13 +21,20 @@ namespace JustDoIt.WebApi.Controllers.v1
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetColumnTasksParameter filter)
         {
-            return Ok(await Mediator.Send(new GetColumnTasksQuery() {ColumnId = filter.ColumnId }));
+            return Ok(await Mediator.Send(new GetColumnTasksQuery() {DeskId = filter.DeskId, TaskMode = filter.TaskMode, TAmount = 5 }));
         }
 
         // POST api/<controller>
         [HttpPost]
         //[Authorize]
         public async Task<IActionResult> Post(CreateTaskCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
+        // PATCH api/<controller>
+        [HttpPatch]
+        //[Authorize]
+        public async Task<IActionResult> Check (CheckTaskCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
