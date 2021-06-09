@@ -33,13 +33,14 @@ namespace JustDoIt.Application.Features.Tasks.Commands.UpdateTask
                 if (_taskRepository.HasSubtasks(task.Id).Result)
                 {
                     throw new ApiException($"Task cannot be checked.");
-                }
-                
-                task.Checked =!task.Checked;
-                if (_taskRepository.IsAllSubtaskChecked(task.ParentTaskId).Result)
+                }                
+                do
                 {
-                    //todo checkedParentTask
+                    task.Checked = !task.Checked;
+                    task = task.ParentTask;
                 }
+                while (task.Checked && _taskRepository.IsAllSubtaskChecked(task.ParentTaskId).Result);
+                                
                 await _taskRepository.UpdateAsync(task);
                 return new Response<int>(task.Id);
                 
