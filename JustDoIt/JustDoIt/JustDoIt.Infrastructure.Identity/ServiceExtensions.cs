@@ -6,6 +6,7 @@ using JustDoIt.Infrastructure.Identity.Contexts;
 using JustDoIt.Infrastructure.Identity.Helpers;
 using JustDoIt.Infrastructure.Identity.Models;
 using JustDoIt.Infrastructure.Identity.Services;
+using JustDoIt.Infrastructure.Shared.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -40,6 +41,7 @@ namespace JustDoIt.Infrastructure.Identity
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
             #region Services
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<IDeskRolesService, DeskRolesService>();
             #endregion
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>

@@ -4,6 +4,7 @@ using JustDoIt.Infrastructure.Identity;
 using JustDoIt.Infrastructure.Persistence;
 using JustDoIt.Infrastructure.Shared;
 using JustDoIt.WebApi.Extensions;
+using JustDoIt.WebApi.Middlewares;
 using JustDoIt.WebApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,6 +23,7 @@ namespace JustDoIt.WebApi
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
             services.AddApplicationLayer();
             services.AddIdentityInfrastructure(_config);
             services.AddPersistenceInfrastructure(_config);
