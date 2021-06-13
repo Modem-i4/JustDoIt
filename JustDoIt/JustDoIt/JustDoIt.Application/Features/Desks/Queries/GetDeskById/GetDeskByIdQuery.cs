@@ -20,17 +20,14 @@ namespace JustDoIt.Application.Features.Products.Queries.GetProductById
         public class GetDeskByIdQueryHandler : IRequestHandler<GetDeskByIdQuery, Response<Desk>>
         {
             private readonly IDeskRepositoryAsync _deskRepository;
-            private readonly IMemoryCache _cache;
-            public GetDeskByIdQueryHandler(IDeskRepositoryAsync deskRepository, IMemoryCache cache)
+            public GetDeskByIdQueryHandler(IDeskRepositoryAsync deskRepository)
             {
                 _deskRepository = deskRepository;
-                _cache = cache;
             }
             public async Task<Response<Desk>> Handle(GetDeskByIdQuery query, CancellationToken cancellationToken)
             {
                 var desk = await _deskRepository.GetByIdAsync(query.Id);
                 if (desk == null) throw new ApiException($"Desk Not Found.");
-                _cache.Set("currentDesk", query.Id);
                 return new Response<Desk>(desk);
             }
         }

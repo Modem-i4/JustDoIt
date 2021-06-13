@@ -8,6 +8,6 @@ namespace JustDoIt.Application.Interfaces.Repositories
 {
     public interface IDeskRepositoryAsync : IGenericRepositoryAsync<Desk>
     {
-        //Task<bool> IsUniqueBarcodeAsync(string barcode);
+        Task<bool> Any(int id);
     }
 }

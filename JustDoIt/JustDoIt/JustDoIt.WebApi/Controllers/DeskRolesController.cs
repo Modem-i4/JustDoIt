@@ -12,6 +12,7 @@ using JustDoIt.Application.Features.DeskRoles.Features.Commands.Invite;
 using JustDoIt.Application.Features.DeskRoles.Commands;
 using JustDoIt.Application.Features.DeskRoles.Queries;
 using JustDoIt.Application.Features.DeskRoles.Queries.GetParticipants;
+using JustDoIt.Application.Features.DeskRoles.Features.Commands.SetCurrentDesk;
 
 namespace JustDoIt.WebApi.Controllers
 {
@@ -19,6 +20,12 @@ namespace JustDoIt.WebApi.Controllers
     [ApiController]
     public class DeskRolesController : BaseApiController
     {
+        [Authorize]
+        [HttpPost("setCurrentDesk")]
+        public async Task<IActionResult> SetCurrentDesk(SetCurrentDeskCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
         [Authorize]
         [HttpPost("invite")]
         [DeskRole(DeskRoles.Manager)]

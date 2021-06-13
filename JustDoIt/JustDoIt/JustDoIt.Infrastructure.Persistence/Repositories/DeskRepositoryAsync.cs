@@ -19,10 +19,9 @@ namespace JustDoIt.Infrastructure.Persistence.Repositories
             _desks = dbContext.Set<Desk>();
         }
 
-        /*public Task<bool> IsUniqueBarcodeAsync(string barcode)
+        public Task<bool> Any(int id)
         {
-            return _products
-                .AllAsync(p => p.Barcode != barcode);
-        }*/
+            return _desks.AnyAsync(o => o.Id == id);
+        }
     }
 }
