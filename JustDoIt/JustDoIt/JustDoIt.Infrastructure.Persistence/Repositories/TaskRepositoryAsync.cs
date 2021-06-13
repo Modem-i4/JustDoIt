@@ -43,7 +43,7 @@ namespace JustDoIt.Infrastructure.Persistence.Repositories
             return _tasks.AnyAsync(o => o.ParentTaskId == taskId);
         }
 
-        public Task<bool> IsAllSubtaskChecked(int parentId)
+        public Task<bool> IsAllSubtaskChecked(int? parentId)
         {
             return _tasks.Where(o => o.ParentTaskId == parentId).AllAsync(o => o.Checked);
         } 
