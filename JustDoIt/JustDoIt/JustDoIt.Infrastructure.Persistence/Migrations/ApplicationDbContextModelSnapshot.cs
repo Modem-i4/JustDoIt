@@ -127,7 +127,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ParentTaskId");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("TaskModels");
                 });
 
             modelBuilder.Entity("JustDoIt.Domain.Entities.Column", b =>
@@ -150,7 +150,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.HasOne("JustDoIt.Domain.Entities.TaskModel", "ParentTask")
                         .WithMany()
                         .HasForeignKey("ParentTaskId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

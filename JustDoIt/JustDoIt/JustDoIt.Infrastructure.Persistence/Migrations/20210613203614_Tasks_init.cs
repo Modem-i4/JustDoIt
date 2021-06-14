@@ -1,14 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace JustDoIt.Infrastructure.Persistence.Migrations
 {
-    public partial class TaskInit : Migration
+    public partial class Tasks_init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
-        {
+        { 
             migrationBuilder.CreateTable(
-                name: "Tasks",
+                name: "TaskModels",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -21,28 +21,43 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     Checked = table.Column<bool>(nullable: false),
                     StartDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
-                    ColumnId = table.Column<int>(nullable: false)
+                    ColumnId = table.Column<int>(nullable: false),
+                    ParentTaskId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tasks", x => x.Id);
+                    table.PrimaryKey("PK_TaskModels", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tasks_Columns_ColumnId",
+                        name: "FK_TaskModels_Columns_ColumnId",
                         column: x => x.ColumnId,
                         principalTable: "Columns",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TaskModels_TaskModels_ParentTaskId",
+                        column: x => x.ParentTaskId,
+                        principalTable: "TaskModels",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
                 });
+
+
             migrationBuilder.CreateIndex(
-                name: "IX_Tasks_ColumnId",
-                table: "Tasks",
+                name: "IX_TaskModels_ColumnId",
+                table: "TaskModels",
                 column: "ColumnId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TaskModels_ParentTaskId",
+                table: "TaskModels",
+                column: "ParentTaskId");
         }
+
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Tasks");
+                name: "TaskModels");
+ 
         }
     }
 }
-

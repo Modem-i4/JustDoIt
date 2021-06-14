@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JustDoIt.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210607191134_TaskInit")]
-    partial class TaskInit
+    [Migration("20210613203614_Tasks_init")]
+    partial class Tasks_init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -114,6 +114,9 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ParentTaskId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
@@ -123,6 +126,8 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ColumnId");
+
+                    b.HasIndex("ParentTaskId");
 
                     b.ToTable("TaskModels");
                 });
@@ -141,6 +146,12 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.HasOne("JustDoIt.Domain.Entities.Column", "Column")
                         .WithMany("Tasks")
                         .HasForeignKey("ColumnId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("JustDoIt.Domain.Entities.TaskModel", "ParentTask")
+                        .WithMany()
+                        .HasForeignKey("ParentTaskId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
