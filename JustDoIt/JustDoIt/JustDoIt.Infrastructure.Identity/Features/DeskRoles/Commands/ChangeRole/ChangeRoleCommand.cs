@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.DeskRoles.Commands
+namespace JustDoIt.Infrastructure.Identity.Features.Users.Commands.ChangeRole
 {
     public partial class ChangeRoleCommand : IRequest<Response<string>>
     {
         public int DeskId { get; set; }
         public string UserId { get; set; }
-        public Enums.DeskRoles Role { get; set; }
+        public Application.Enums.DeskRoles Role { get; set; }
     }
     public class ChangeRoleCommandHandler : IRequestHandler<ChangeRoleCommand, Response<string>>
     {

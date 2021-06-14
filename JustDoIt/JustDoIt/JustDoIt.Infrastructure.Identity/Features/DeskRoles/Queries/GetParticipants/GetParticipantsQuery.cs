@@ -9,12 +9,12 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.DeskRoles.Queries
+namespace JustDoIt.Infrastructure.Identity.Features.Users.Queries.GetParticipants
 {
-    public class GetParticipantsQuery : IRequest<Response<List<GetParticipantsViewModel>>>
+    public class GetParticipantsQuery : IRequest<Response<IEnumerable<GetParticipantsViewModel>>>
     {
         public int DeskId { get; set; }
-        public class GetParticipantsQueryHandler : IRequestHandler<GetParticipantsQuery, Response<List<GetParticipantsViewModel>>>
+        public class GetParticipantsQueryHandler : IRequestHandler<GetParticipantsQuery, Response<IEnumerable<GetParticipantsViewModel>>>
         {
             private readonly IDeskRolesService _deskRolesService;
             private readonly IMapper _mapper;
@@ -23,10 +23,11 @@ namespace JustDoIt.Application.Features.DeskRoles.Queries
                 _deskRolesService = deskRolesService;
                 _mapper = mapper;
             }
-            public async Task<Response<List<GetParticipantsViewModel>>> Handle(GetParticipantsQuery query, CancellationToken cancellationToken)
+            public async Task<Response<IEnumerable<GetParticipantsViewModel>>> Handle(GetParticipantsQuery query, CancellationToken cancellationToken)
             {
                 var participants = await _deskRolesService.GetParticipants(query);
-                return new Response<List<GetParticipantsViewModel>>(participants);
+                var participantsViewModel = _mapper.Map<IEnumerable<GetParticipantsViewModel>>(participants);
+                return new Response<IEnumerable<GetParticipantsViewModel>>(participantsViewModel);
             }
         }
     }

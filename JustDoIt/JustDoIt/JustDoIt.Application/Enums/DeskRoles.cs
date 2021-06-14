@@ -10,5 +10,6 @@ namespace JustDoIt.Application.Enums
         Invited,
         User,
         Manager,
+        Owner,
     }
 }

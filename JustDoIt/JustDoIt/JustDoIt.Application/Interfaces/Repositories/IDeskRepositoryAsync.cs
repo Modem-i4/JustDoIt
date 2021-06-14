@@ -8,6 +8,6 @@ namespace JustDoIt.Application.Interfaces.Repositories
 {
     public interface IDeskRepositoryAsync : IGenericRepositoryAsync<Desk>
     {
-        Task<bool> Any(int id);
+        Task<bool> AnyAsync(int id);
     }
 }

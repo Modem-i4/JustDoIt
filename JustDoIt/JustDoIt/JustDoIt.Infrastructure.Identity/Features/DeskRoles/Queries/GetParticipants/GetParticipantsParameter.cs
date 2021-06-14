@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JustDoIt.Application.Features.DeskRoles.Queries.GetParticipants
+namespace JustDoIt.Infrastructure.Identity.Features.Users.Queries.GetParticipants
 {
     public class GetParticipantsParameter
     {
