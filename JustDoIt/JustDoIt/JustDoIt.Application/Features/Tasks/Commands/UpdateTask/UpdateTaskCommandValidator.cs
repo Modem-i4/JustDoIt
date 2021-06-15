@@ -26,17 +26,20 @@ namespace JustDoIt.Application.Features.Tasks.Commands.UpdateTask
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
                 .MustAsync(ColumnExists).WithMessage("Column does not exist.");
-            RuleFor(p => p.ParentTaskId)
+            /*
+                RuleFor(p => p.ParentTaskId)
                .NotEmpty().WithMessage("{PropertyName} is required.")
                .NotNull()
                .MustAsync(TaskExists).WithMessage("Task does not exist.");
+            */
         }
-
+        /*
         private async Task<bool> TaskExists(int? taskId, CancellationToken cancellationToken)
         {
+
             return await taskRepository.TaskExists(taskId);
         }
-
+        */
 
         private async Task<bool> ColumnExists(int columnId, CancellationToken cancellationToken)
         {
