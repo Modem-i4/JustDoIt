@@ -112,7 +112,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ParentTaskId")
+                    b.Property<int?>("ParentTaskId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
@@ -149,9 +149,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
 
                     b.HasOne("JustDoIt.Domain.Entities.TaskModel", "ParentTask")
                         .WithMany()
-                        .HasForeignKey("ParentTaskId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ParentTaskId");
                 });
 #pragma warning restore 612, 618
         }

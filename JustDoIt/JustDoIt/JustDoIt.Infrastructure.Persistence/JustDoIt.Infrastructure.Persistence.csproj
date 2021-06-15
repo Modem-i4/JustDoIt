@@ -20,6 +20,12 @@
     <Compile Remove="Migrations\20210613162011_testthisproblem3.Designer.cs" />
     <Compile Remove="Migrations\20210613185650_testupdateTest.cs" />
     <Compile Remove="Migrations\20210613185650_testupdateTest.Designer.cs" />
+    <Compile Remove="Migrations\20210613203614_Tasks_init.cs" />
+    <Compile Remove="Migrations\20210613203614_Tasks_init.Designer.cs" />
+    <Compile Remove="Migrations\20210615063250_TaskInit.cs" />
+    <Compile Remove="Migrations\20210615063250_TaskInit.Designer.cs" />
+    <Compile Remove="Migrations\20210615065150_TaskI.cs" />
+    <Compile Remove="Migrations\20210615065150_TaskI.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

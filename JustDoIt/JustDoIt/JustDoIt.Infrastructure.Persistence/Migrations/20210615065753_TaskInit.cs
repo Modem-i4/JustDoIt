@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace JustDoIt.Infrastructure.Persistence.Migrations
 {
-    public partial class Tasks_init : Migration
+    public partial class TaskInit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
-        { 
+        {
             migrationBuilder.CreateTable(
                 name: "TaskModels",
                 columns: table => new
@@ -22,7 +22,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     StartDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
                     ColumnId = table.Column<int>(nullable: false),
-                    ParentTaskId = table.Column<int>(nullable: false)
+                    ParentTaskId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -38,9 +38,8 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                         column: x => x.ParentTaskId,
                         principalTable: "TaskModels",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Restrict);
                 });
-
 
             migrationBuilder.CreateIndex(
                 name: "IX_TaskModels_ColumnId",
@@ -57,7 +56,6 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
         {
             migrationBuilder.DropTable(
                 name: "TaskModels");
- 
         }
     }
 }

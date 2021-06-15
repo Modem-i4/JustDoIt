@@ -1,23 +1,19 @@
 ﻿using FluentValidation;
-using JustDoIt.Application.Features.Tasks.Commands.CreateTask;
 using JustDoIt.Application.Interfaces.Repositories;
-using JustDoIt.Domain.Entities;
-using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.Tasks.Commands.CreateTask
+namespace JustDoIt.Application.Features.Tasks.Commands.UpdateTask
 {
-    public class CreateTaskCommandValidator : AbstractValidator<CreateTaskCommand>
+    public class UpdateTaskCommandValidator : AbstractValidator<UpdateTaskCommand>
     {
         private readonly ITaskRepositoryAsync taskRepository;
         private readonly IColumnRepositoryAsync columnRepository;
 
-        public CreateTaskCommandValidator(ITaskRepositoryAsync taskRepository, IColumnRepositoryAsync columnRepository)
+        public UpdateTaskCommandValidator(ITaskRepositoryAsync taskRepository, IColumnRepositoryAsync columnRepository)
         {
             this.taskRepository = taskRepository;
             this.columnRepository = columnRepository;
@@ -31,16 +27,18 @@ namespace JustDoIt.Application.Features.Tasks.Commands.CreateTask
                 .NotNull()
                 .MustAsync(ColumnExists).WithMessage("Column does not exist.");
             RuleFor(p => p.ParentTaskId)
-              .NotEmpty().WithMessage("{PropertyName} is required.")
-              .NotNull()
-              .MustAsync(TaskExists).WithMessage("Task does not exist.");
+               .NotEmpty().WithMessage("{PropertyName} is required.")
+               .NotNull()
+               .MustAsync(TaskExists).WithMessage("Task does not exist.");
         }
 
         private async Task<bool> TaskExists(int? taskId, CancellationToken cancellationToken)
         {
             return await taskRepository.TaskExists(taskId);
         }
-        private async Task<bool> ColumnExists (int columnId, CancellationToken cancellationToken)
+
+
+        private async Task<bool> ColumnExists(int columnId, CancellationToken cancellationToken)
         {
             return await columnRepository.ColumnExists(columnId);
 
