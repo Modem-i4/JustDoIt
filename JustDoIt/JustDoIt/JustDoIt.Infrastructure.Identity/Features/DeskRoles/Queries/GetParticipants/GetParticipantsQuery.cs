@@ -9,11 +9,12 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Infrastructure.Identity.Features.Users.Queries.GetParticipants
+namespace JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetParticipants
 {
     public class GetParticipantsQuery : IRequest<Response<IEnumerable<GetParticipantsViewModel>>>
     {
         public int DeskId { get; set; }
+        public Application.Enums.ParticipantsFilter ParticipantsFilter { get; set; }
         public class GetParticipantsQueryHandler : IRequestHandler<GetParticipantsQuery, Response<IEnumerable<GetParticipantsViewModel>>>
         {
             private readonly IDeskRolesService _deskRolesService;

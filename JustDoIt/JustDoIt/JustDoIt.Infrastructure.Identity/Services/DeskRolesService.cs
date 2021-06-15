@@ -3,7 +3,10 @@ using JustDoIt.Application.Exceptions;
 using JustDoIt.Application.Interfaces;
 using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Application.Wrappers;
+using JustDoIt.Domain.Entities;
 using JustDoIt.Infrastructure.Identity.Contexts;
+using JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetParticipants;
+using JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetPendingInvitations;
 using JustDoIt.Infrastructure.Identity.Features.Users.Commands.AcceptInvitation;
 using JustDoIt.Infrastructure.Identity.Features.Users.Commands.AddOwner;
 using JustDoIt.Infrastructure.Identity.Features.Users.Commands.ChangeRole;
@@ -36,15 +39,8 @@ namespace JustDoIt.Infrastructure.Shared.Services
                 if(value != _currentDeskId)
                 {
                     var role = GetAccessLevel(deskId: value).Result;
-                    if (role > DeskRoles.Invited)
-                    {
-                        _currentDeskId = value;
-                        CurrentDeskRole = role;
-                    }
-                    else
-                    {
-                        throw new ApiException($"You are now authorized to see this desk");
-                    }
+                    _currentDeskId = value;
+                    CurrentDeskRole = role;
                 }
             }
         }
@@ -97,10 +93,28 @@ namespace JustDoIt.Infrastructure.Shared.Services
             }
         }
 
-        public Task<List<ApplicationUser>> GetParticipants(GetParticipantsQuery query)
+        public Task<List<GetParticipantsViewModel>> GetParticipants(GetParticipantsQuery query)
         {
-            var users = _deskRoles.Include(o => o.User).Where(o => o.DeskId == query.DeskId).Select(o => o.User).ToListAsync();
-            return users;
+            var deskRoles = _deskRoles.Include(o => o.User).Where(o => o.DeskId == query.DeskId);
+            switch (query.ParticipantsFilter)
+            {
+                case ParticipantsFilter.All:
+                    break;
+                case ParticipantsFilter.Pending:
+                    deskRoles = deskRoles.Where(o => o.Role == DeskRoles.Invited || o.Role == DeskRoles.Pending);
+                    break;
+                case ParticipantsFilter.Authorized:
+                    deskRoles = deskRoles.Where(o => o.Role > DeskRoles.Invited);
+                    break;
+            }
+            return deskRoles.Select(o => new GetParticipantsViewModel
+            {
+                Id = o.User.Id,
+                Email = o.User.Email,
+                Name = $"{o.User.FirstName} {o.User.LastName}",
+                Role = o.Role,
+                Username = o.User.UserName
+            }).ToListAsync();
         }
 
         private Task<DeskRoles> GetAccessLevel(int deskId)
@@ -140,6 +154,17 @@ namespace JustDoIt.Infrastructure.Shared.Services
         public Task<bool> HasParticipants(int deskId)
         {
             return _deskRoles.AnyAsync(o => o.DeskId == deskId);
+        }
+
+        public Task<UserDeskRole> GetInvitation(int id)
+        {
+            return _deskRoles.FirstOrDefaultAsync(o => o.Id == id);
+        }
+
+        public Task<List<Desk>> GetInvitationsDesks()
+        {
+            return _deskRoles.Where(o => o.UserId == _userId && o.Role == DeskRoles.Invited)
+                .Select(o => _deskRepository.GetByIdAsync(o.DeskId).Result).ToListAsync();
         }
     }
 }

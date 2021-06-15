@@ -4,13 +4,10 @@ using System.Text;
 
 namespace JustDoIt.Application.Enums
 {
-    public enum DeskRoles
+    public enum ParticipantsFilter
     {
-        Basic,
+        All,
         Pending,
-        Invited,
-        User,
-        Manager,
-        Owner,
+        Authorized
     }
 }

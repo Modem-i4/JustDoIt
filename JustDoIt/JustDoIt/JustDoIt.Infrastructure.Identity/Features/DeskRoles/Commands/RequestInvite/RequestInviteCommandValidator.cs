@@ -12,34 +12,31 @@ using Microsoft.Extensions.Caching.Memory;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Infrastructure.Identity.Features.Users.Commands.Invite
+namespace JustDoIt.Infrastructure.Identity.Features.Users.Commands.RequestInvite
 {
-    public class InviteCommandValidator : AbstractExtendedValidator<InviteCommand>
+    public class RequestInviteCommandValidator : AbstractValidator<RequestInviteCommand>
     {
         private readonly IDeskRepositoryAsync _deskRepository;
-        private readonly IUserRepositoryAsync _userRepository;
-        public InviteCommandValidator(IDeskRepositoryAsync deskRepository, IUserRepositoryAsync userRepository, IMemoryCache cache) : base(cache)
+        private readonly IDeskRolesService _deskRolesService;
+        private readonly string _userId;
+        public RequestInviteCommandValidator(IDeskRepositoryAsync deskRepository, IDeskRolesService deskRolesService, IAuthenticatedUserService authenticatedUser)
         {
             _deskRepository = deskRepository;
-            _userRepository = userRepository;
+            _deskRolesService = deskRolesService;
+            _userId = authenticatedUser.UserId;
 
             RuleFor(p => p.DeskId)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .MustAsync(DoDeskEntryExist).WithMessage("This desk doesn't exist.")
-                .Must(ValidateDeskId).WithMessage("Open/select this desk first.");
-            RuleFor(p => p.UserId)
-                .NotEmpty().WithMessage("{PropertyName} is required.")
-                .MustAsync(DoUserEntryExist).WithMessage("This user doesn't exist.");
-
-
+                .MustAsync(IsEntryUnique).WithMessage("You have already requested this desk permissions.");
         }
         private async Task<bool> DoDeskEntryExist(int id, CancellationToken cancellationToken)
         {
             return await _deskRepository.AnyAsync(id);
         }
-        private async Task<bool> DoUserEntryExist(string id, CancellationToken cancellationToken)
+        private async Task<bool> IsEntryUnique(int deskId, CancellationToken cancellationToken)
         {
-            return await _userRepository.AnyAsync(id);
+            return !await _deskRolesService.AnyByFilterAsync(deskId, _userId);
         }
     }
 }

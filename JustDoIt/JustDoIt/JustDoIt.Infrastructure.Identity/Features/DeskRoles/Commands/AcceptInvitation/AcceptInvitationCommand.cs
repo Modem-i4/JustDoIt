@@ -28,18 +28,6 @@ namespace JustDoIt.Infrastructure.Identity.Features.Users.Commands.AcceptInvitat
         {
             var response = await _deskRolesService.AcceptInvitation(request);
             return response;
-            /*
-             * 
-            var deskRole = _deskRoles.FirstOrDefault(o => o.Id == command.Id);
-            var desk = await _deskRepository.GetByIdAsync(deskRole.DeskId);
-            if (deskRole.Role == DeskRoles.Basic)
-            {
-                throw new ApiException("You are not invited to this desk");
-            }
-            if(deskRole.Role > DeskRoles.Invited)
-            {
-                throw new ApiException("You have already accepted this invitation");
-            }*/
         }
     }
 }

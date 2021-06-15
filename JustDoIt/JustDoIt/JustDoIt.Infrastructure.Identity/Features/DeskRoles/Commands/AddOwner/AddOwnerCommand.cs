@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using JustDoIt.Application.Attributes;
 using JustDoIt.Application.Interfaces;
 using JustDoIt.Application.Wrappers;
 using JustDoIt.Infrastructure.Identity.Models;
@@ -26,7 +27,6 @@ namespace JustDoIt.Infrastructure.Identity.Features.Users.Commands.AddOwner
             _authenticatedUser = authenticatedUser;
             _dateTimeService = dateTimeService;
         }
-
         public async Task<Response<string>> Handle(AddOwnerCommand request, CancellationToken cancellationToken)
         {
             var response = await _deskRolesService.AddUser(new UserDeskRole

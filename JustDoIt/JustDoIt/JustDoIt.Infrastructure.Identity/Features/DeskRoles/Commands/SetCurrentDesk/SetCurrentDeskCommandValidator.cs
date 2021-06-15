@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using JustDoIt.Application;
 using JustDoIt.Application.Enums;
 using JustDoIt.Application.Interfaces;
 using JustDoIt.Application.Interfaces.Repositories;
@@ -8,6 +9,7 @@ using JustDoIt.Domain.Entities;
 using JustDoIt.Infrastructure.Identity.Features.Users.Commands.SetCurrentDesk;
 using JustDoIt.Infrastructure.Identity.Models;
 using MediatR;
+using Microsoft.Extensions.Caching.Memory;
 using System.Threading;
 using System.Threading.Tasks;
 
