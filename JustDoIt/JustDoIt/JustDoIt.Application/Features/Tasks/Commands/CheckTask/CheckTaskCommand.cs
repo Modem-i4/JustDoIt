@@ -10,19 +10,18 @@ using System.Threading.Tasks;
 
 namespace JustDoIt.Application.Features.Tasks.Commands.UpdateTask
 {
-    public class CheckTaskCommand : IRequest<Response<int>>
+    public class CheckTaskCommand : IRequest<Response<string>>
     {
         public int Id { get; set; }
-        public bool Checked { get; set; }
 
-        public class CheckTaskCommandHandler : IRequestHandler<CheckTaskCommand, Response<int>>
+        public class CheckTaskCommandHandler : IRequestHandler<CheckTaskCommand, Response<string>>
         {
             private readonly ITaskRepositoryAsync _taskRepository;
             public CheckTaskCommandHandler(ITaskRepositoryAsync taskRepository)
             {
                 _taskRepository = taskRepository;
             }
-            public async Task<Response<int>> Handle(CheckTaskCommand command, CancellationToken cancellationToken)
+            public async Task<Response<string>> Handle(CheckTaskCommand command, CancellationToken cancellationToken)
             {
                 var task = await _taskRepository.GetByIdAsync(command.Id);
 
@@ -37,12 +36,12 @@ namespace JustDoIt.Application.Features.Tasks.Commands.UpdateTask
                 do
                 {
                     task.Checked = !task.Checked;
+                    await _taskRepository.UpdateAsync(task);
                     task = task.ParentTask;
                 }
-                while (task.Checked && _taskRepository.IsAllSubtaskChecked(task.ParentTaskId).Result);
-                                
-                await _taskRepository.UpdateAsync(task);
-                return new Response<int>(task.Id);
+                while (task != null && task.Checked && _taskRepository.IsAllSubtaskChecked(task.ParentTaskId).Result);
+
+                return new Response<string>($"Task has been inverted") { Succeeded = true, Data = Convert.ToString(command.Id) };
                 
             }
         }
