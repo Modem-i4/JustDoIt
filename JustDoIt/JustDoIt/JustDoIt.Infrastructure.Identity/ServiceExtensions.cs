@@ -1,11 +1,17 @@
-﻿using JustDoIt.Application.Exceptions;
+﻿using AutoMapper;
+using FluentValidation;
+using JustDoIt.Application.Behaviours;
+using JustDoIt.Application.Exceptions;
 using JustDoIt.Application.Interfaces;
+using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Application.Wrappers;
 using JustDoIt.Domain.Settings;
 using JustDoIt.Infrastructure.Identity.Contexts;
 using JustDoIt.Infrastructure.Identity.Helpers;
 using JustDoIt.Infrastructure.Identity.Models;
 using JustDoIt.Infrastructure.Identity.Services;
+using JustDoIt.Infrastructure.Shared.Services;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System;
+using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,7 +47,14 @@ namespace JustDoIt.Infrastructure.Identity
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
             #region Services
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<IDeskRolesService, DeskRolesService>();
+            services.AddTransient<IUserRepositoryAsync, UserRepositoryAsync>();
             #endregion
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>
             {

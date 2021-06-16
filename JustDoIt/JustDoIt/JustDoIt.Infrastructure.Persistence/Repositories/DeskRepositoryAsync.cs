@@ -5,6 +5,7 @@ using JustDoIt.Infrastructure.Persistence.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,10 +20,9 @@ namespace JustDoIt.Infrastructure.Persistence.Repositories
             _desks = dbContext.Set<Desk>();
         }
 
-        /*public Task<bool> IsUniqueBarcodeAsync(string barcode)
+        public Task<bool> AnyAsync(int id)
         {
-            return _products
-                .AllAsync(p => p.Barcode != barcode);
-        }*/
+            return _desks.AnyAsync(o => o.Id == id);
+        }
     }
 }

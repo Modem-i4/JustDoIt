@@ -5,6 +5,9 @@ using JustDoIt.Application.Features.Products.Commands.UpdateProduct;
 using JustDoIt.Application.Features.Products.Queries.GetAllProducts;
 using JustDoIt.Application.Features.Products.Queries.GetProductById;
 using JustDoIt.Application.Filters;
+using JustDoIt.Infrastructure.Identity.Features.Users.Commands.AddOwner;
+using JustDoIt.Infrastructure.Identity.Features.Users.Commands.ChangeRole;
+using JustDoIt.Infrastructure.Identity.Features.Users.Commands.SetCurrentDesk;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,7 +26,6 @@ namespace JustDoIt.WebApi.Controllers.v1
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetAllDesksParameter filter)
         {
-
             return Ok(await Mediator.Send(new GetAllDesksQuery() { PageSize = filter.PageSize, PageNumber = filter.PageNumber }));
         }
 
@@ -39,7 +41,13 @@ namespace JustDoIt.WebApi.Controllers.v1
         //[Authorize]
         public async Task<IActionResult> Post(CreateDeskCommand command)
         {
-            return Ok(await Mediator.Send(command));
+            var response = await Mediator.Send(command);
+            if (response.Succeeded)
+            {
+                await Mediator.Send(new SetCurrentDeskCommand { Id = response.Data });
+                await Mediator.Send(new AddOwnerCommand { DeskId = response.Data });
+            }
+            return Ok(response);
         }
 
         // PUT api/<controller>/5

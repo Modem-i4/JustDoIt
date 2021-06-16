@@ -20,6 +20,6 @@
   <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.7" />
   </ItemGroup>
 <ItemGroup>
-  <ProjectReference Include="..\JustDoIt.Application\JustDoIt.Application.csproj" />
+  <ProjectReference Include="..\JustDoIt.Infrastructure.Persistence\JustDoIt.Infrastructure.Persistence.csproj" />
 </ItemGroup>
 </Project>

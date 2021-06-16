@@ -1,8 +1,11 @@
 ﻿using JustDoIt.Application.Exceptions;
+using JustDoIt.Application.Interfaces;
 using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Application.Wrappers;
 using JustDoIt.Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Text;
