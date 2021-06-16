@@ -33,6 +33,7 @@ namespace JustDoIt.Infrastructure.Persistence
             services.AddTransient<IDeskRepositoryAsync, DeskRepositoryAsync>();
             services.AddTransient<IColumnRepositoryAsync, ColumnRepositoryAsync>();
             services.AddTransient<ITaskRepositoryAsync, TaskRepositoryAsync>();
+            services.AddTransient<ICommentRepositoryAsync, CommentRepositoryAsync>();
             #endregion
         }
     }
