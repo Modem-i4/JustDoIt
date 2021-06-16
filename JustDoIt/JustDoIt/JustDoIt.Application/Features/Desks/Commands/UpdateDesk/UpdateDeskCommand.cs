@@ -15,7 +15,6 @@ namespace JustDoIt.Application.Features.Products.Commands.UpdateProduct
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string OwnerId { get; set; }
         public class UpdateDeskCommandHandler : IRequestHandler<UpdateDeskCommand, Response<int>>
         {
             private readonly IDeskRepositoryAsync _deskRepository;
@@ -34,7 +33,6 @@ namespace JustDoIt.Application.Features.Products.Commands.UpdateProduct
                 else
                 {
                     desk.Title = command.Title;
-                    desk.OwnerId = command.OwnerId;
                     desk.Description = command.Description;
                     await _deskRepository.UpdateAsync(desk);
                     return new Response<int>(desk.Id);

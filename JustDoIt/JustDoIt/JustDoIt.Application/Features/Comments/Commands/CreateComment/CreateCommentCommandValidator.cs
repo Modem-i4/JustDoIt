@@ -10,17 +10,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.Columns.Commands.CreateColumn
+namespace JustDoIt.Application.Features.Comments.Commands.CreateComment
 {
-    public class CreateColumnCommandValidator : AbstractValidator<CreateColumnCommand>
+    public class CreateCommentCommandValidator : AbstractValidator<CreateCommentCommand>
     {
-        private readonly IColumnRepositoryAsync columnRepository;
-
-        public CreateColumnCommandValidator(IColumnRepositoryAsync columnRepository)
+        public CreateCommentCommandValidator()
         {
-            this.columnRepository = columnRepository;
-
-            RuleFor(p => p.Title)
+            RuleFor(p => p.Body)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
                 .MinimumLength(3).WithMessage("{PropertyName} must not have at least 3 characters.")

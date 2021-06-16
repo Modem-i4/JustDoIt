@@ -10,6 +10,22 @@
     <Compile Remove="Migrations\20200627124316_Updates.Designer.cs" />
     <Compile Remove="Migrations\20200724180907_New.cs" />
     <Compile Remove="Migrations\20200724180907_New.Designer.cs" />
+    <Compile Remove="Migrations\20210613120719_ParentTaskFix.cs" />
+    <Compile Remove="Migrations\20210613120719_ParentTaskFix.Designer.cs" />
+    <Compile Remove="Migrations\20210613161102_testthisproblem.cs" />
+    <Compile Remove="Migrations\20210613161102_testthisproblem.Designer.cs" />
+    <Compile Remove="Migrations\20210613161707_testthisproblem2.cs" />
+    <Compile Remove="Migrations\20210613161707_testthisproblem2.Designer.cs" />
+    <Compile Remove="Migrations\20210613162011_testthisproblem3.cs" />
+    <Compile Remove="Migrations\20210613162011_testthisproblem3.Designer.cs" />
+    <Compile Remove="Migrations\20210613185650_testupdateTest.cs" />
+    <Compile Remove="Migrations\20210613185650_testupdateTest.Designer.cs" />
+    <Compile Remove="Migrations\20210613203614_Tasks_init.cs" />
+    <Compile Remove="Migrations\20210613203614_Tasks_init.Designer.cs" />
+    <Compile Remove="Migrations\20210615063250_TaskInit.cs" />
+    <Compile Remove="Migrations\20210615063250_TaskInit.Designer.cs" />
+    <Compile Remove="Migrations\20210615065150_TaskI.cs" />
+    <Compile Remove="Migrations\20210615065150_TaskI.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

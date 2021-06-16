@@ -5,29 +5,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using JustDoIt.Application.Features.Columns.Queries.GetDeskColumn;
-using JustDoIt.Application.Features.Columns.Commands.CreateColumn;
-using JustDoIt.Application.Features.Columns.Commands.UpdateColumn;
-using JustDoIt.Application.Features.Columns.Commands.DeleteColumnById;
+using JustDoIt.Application.Features.Comments.Queries.GetComment;
+using JustDoIt.Application.Features.Comments.Commands.CreateComment;
+using JustDoIt.Application.Features.Comments.Commands.UpdateComment;
+using JustDoIt.Application.Features.Comments.Commands.DeleteCommentById;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace JustDoIt.WebApi.Controllers.v1
 {
     [ApiVersion("1.0")]
-    public class ColumnController : BaseApiController
+    public class CommentController : BaseApiController
     {
         // GET: api/<controller>
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] GetDeskColumnsParameter filter)
+        public async Task<IActionResult> Get([FromQuery] GetCommentTParameter filter)
         {
-            return Ok(await Mediator.Send(new GetDeskColumnsQuery() { DeskId = filter.DeskId }));
+            return Ok(await Mediator.Send(new GetCommentTQuery() { TaskId = filter.TaskId }));
         }
 
         // POST api/<controller>
         [HttpPost]
         //[Authorize]
-        public async Task<IActionResult> Post(CreateColumnCommand command)
+        public async Task<IActionResult> Post(CreateCommentCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
@@ -35,7 +35,7 @@ namespace JustDoIt.WebApi.Controllers.v1
         // PUT api/<controller>/5
         [HttpPut("{id}")]
         //[Authorize]
-        public async Task<IActionResult> Put(int id, UpdateColumnCommand command)
+        public async Task<IActionResult> Put(int id, UpdateCommentCommand command)
         {
             if (id != command.Id)
             {
@@ -49,7 +49,7 @@ namespace JustDoIt.WebApi.Controllers.v1
         //[Authorize]
         public async Task<IActionResult> Delete(int id)
         {
-            return Ok(await Mediator.Send(new DeleteColumnByIdCommand { Id = id }));
+            return Ok(await Mediator.Send(new DeleteCommentByIdCommand { Id = id }));
         }
     }
 }

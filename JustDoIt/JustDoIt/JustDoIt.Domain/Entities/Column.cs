@@ -10,6 +10,6 @@ namespace JustDoIt.Domain.Entities
         public int DeskId { get; set; }
         public Desk Desk { get; set; }
         public string Title { get; set; }
-        //public IEnumerable<TaskModel> Tasks { get; set; }
+        public IEnumerable<TaskModel> Tasks { get; set; }
     }
 }
