@@ -10,11 +10,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.Comments.Commands.CreateComment
+namespace JustDoIt.Application.Features.Comments.Commands.UpdateComment
 {
-    public class CreateCommentCommandValidator : AbstractValidator<CreateCommentCommand>
+    public class UpdateCommentCommandValidator : AbstractValidator<UpdateCommentCommand>
     {
-        public CreateCommentCommandValidator()
+        public UpdateCommentCommandValidator()
         {
             RuleFor(p => p.Body)
                 .NotEmpty().WithMessage("{PropertyName} is required.")

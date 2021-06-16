@@ -12,7 +12,6 @@ namespace JustDoIt.Application.Features.Products.Commands.CreateProduct
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public string OwnerId{ get; set; }
     }
     public class CreateDeskCommandHandler : IRequestHandler<CreateDeskCommand, Response<int>>
     {

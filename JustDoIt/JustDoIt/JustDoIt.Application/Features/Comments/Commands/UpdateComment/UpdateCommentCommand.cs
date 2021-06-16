@@ -27,7 +27,7 @@ namespace JustDoIt.Application.Features.Comments.Commands.UpdateComment
 
                 if (comment == null)
                 {
-                    throw new ApiException($"Desk Not Found.");
+                    throw new ApiException($"Comment Not Found.");
                 }
                 else
                 {
