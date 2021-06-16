@@ -58,13 +58,13 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastModified")
@@ -76,7 +76,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.Property<int>("TaskId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -147,7 +147,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ParentTaskId")
+                    b.Property<int?>("ParentTaskId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
@@ -162,7 +162,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ParentTaskId");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("TaskModels");
                 });
 
             modelBuilder.Entity("JustDoIt.Domain.Entities.Column", b =>
@@ -193,9 +193,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
 
                     b.HasOne("JustDoIt.Domain.Entities.TaskModel", "ParentTask")
                         .WithMany()
-                        .HasForeignKey("ParentTaskId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ParentTaskId");
                 });
 #pragma warning restore 612, 618
         }

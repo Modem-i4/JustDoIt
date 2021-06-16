@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using JustDoIt.Application.Features.Columns.Commands.CreateColumn;
 using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -19,20 +20,12 @@ namespace JustDoIt.Application.Features.Comments.Commands.CreateComment
         {
             this.commentRepository = commentRepository;
 
-            /*RuleFor(p => p.OwnerId)
-                .NotEmpty().WithMessage("{PropertyName} is required.")
-                .NotNull()
-                .MaximumLength(50).WithMessage("{PropertyName} must not exceed 50 characters.")
-                .MustAsync(IsUniqueOwnerId).WithMessage("{PropertyName} already exists.");
-            */
-            RuleFor(p => p.Title)
+            RuleFor(p => p.Body)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
                 .MinimumLength(3).WithMessage("{PropertyName} must not have at least 3 characters.")
                 .MaximumLength(50).WithMessage("{PropertyName} must not exceed 50 characters.");
-                
 
         }
-
     }
 }

@@ -13,29 +13,27 @@ namespace JustDoIt.Application.Features.Comments.Commands.UpdateComment
     public class UpdateCommentCommand : IRequest<Response<int>>
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string Body { get; set; }
         public class UpdateCommentCommandHandler : IRequestHandler<UpdateCommentCommand, Response<int>>
         {
-            private readonly IDeskRepositoryAsync _deskRepository;
-            public UpdateCommentCommandHandler(IDeskRepositoryAsync deskRepository)
+            private readonly ICommentRepositoryAsync _commentRepository;
+            public UpdateCommentCommandHandler(ICommentRepositoryAsync commentRepository)
             {
-                _deskRepository = deskRepository;
+                _commentRepository = commentRepository;
             }
             public async Task<Response<int>> Handle(UpdateCommentCommand command, CancellationToken cancellationToken)
             {
-                var desk = await _deskRepository.GetByIdAsync(command.Id);
+                var comment = await _commentRepository.GetByIdAsync(command.Id);
 
-                if (desk == null)
+                if (comment == null)
                 {
                     throw new ApiException($"Desk Not Found.");
                 }
                 else
                 {
-                    desk.Title = command.Title;
-                    desk.Description = command.Description;
-                    await _deskRepository.UpdateAsync(desk);
-                    return new Response<int>(desk.Id);
+                    comment.Body = command.Body;
+                    await _commentRepository.UpdateAsync(comment);
+                    return new Response<int>(comment.Id);
                 }
             }
         }

@@ -16,7 +16,7 @@ namespace JustDoIt.Application.Features.Tasks.Commands.CreateTask
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int ColumnId { get; set; }
-        public int ParentTaskId { get; set; }
+        public int? ParentTaskId { get; set; }
     }
     public class CreateTaskCommandHandler : IRequestHandler<CreateTaskCommand, Response<int>>
     {

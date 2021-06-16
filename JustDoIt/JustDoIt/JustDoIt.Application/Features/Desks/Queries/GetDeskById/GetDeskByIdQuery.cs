@@ -11,17 +11,17 @@ using System.Threading.Tasks;
 
 namespace JustDoIt.Application.Features.Products.Queries.GetProductById
 {
-    public class GetCommentByIdQuery : IRequest<Response<Desk>>
+    public class GetDeskByIdQuery : IRequest<Response<Desk>>
     {
         public int Id { get; set; }
-        public class GetDeskByIdQueryHandler : IRequestHandler<GetCommentByIdQuery, Response<Desk>>
+        public class GetDeskByIdQueryHandler : IRequestHandler<GetDeskByIdQuery, Response<Desk>>
         {
             private readonly IDeskRepositoryAsync _deskRepository;
             public GetDeskByIdQueryHandler(IDeskRepositoryAsync deskRepository)
             {
                 _deskRepository = deskRepository;
             }
-            public async Task<Response<Desk>> Handle(GetCommentByIdQuery query, CancellationToken cancellationToken)
+            public async Task<Response<Desk>> Handle(GetDeskByIdQuery query, CancellationToken cancellationToken)
             {
                 var desk = await _deskRepository.GetByIdAsync(query.Id);
                 if (desk == null) throw new ApiException($"Desk Not Found.");

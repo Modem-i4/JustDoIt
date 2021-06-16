@@ -10,17 +10,17 @@ namespace JustDoIt.Application.Features.Comments.Commands.CreateComment
 {
     public partial class CreateCommentCommand : IRequest<Response<int>>
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string Body { get; set; }
+        public string UserId { get; set; }
         public int TaskId { get; set; }
     }
     public class CreateCommentCommandHandler : IRequestHandler<CreateCommentCommand, Response<int>>
     {
         private readonly ICommentRepositoryAsync _commentRepository;
         private readonly IMapper _mapper;
-        public CreateCommentCommandHandler(ICommentRepositoryAsync commentRepository, IMapper mapper)
+        public CreateCommentCommandHandler(ICommentRepositoryAsync columnRepository, IMapper mapper)
         {
-            _commentRepository = commentRepository;
+            _commentRepository = columnRepository;
             _mapper = mapper;
         }
 

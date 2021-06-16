@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JustDoIt.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210607191613_TaskUpd")]
-    partial class TaskUpd
+    [Migration("20210615065753_TaskInit")]
+    partial class TaskInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -114,7 +114,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ParentTaskId")
+                    b.Property<int?>("ParentTaskId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
@@ -129,7 +129,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ParentTaskId");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("TaskModels");
                 });
 
             modelBuilder.Entity("JustDoIt.Domain.Entities.Column", b =>
@@ -151,9 +151,7 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
 
                     b.HasOne("JustDoIt.Domain.Entities.TaskModel", "ParentTask")
                         .WithMany()
-                        .HasForeignKey("ParentTaskId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .HasForeignKey("ParentTaskId");
                 });
 #pragma warning restore 612, 618
         }

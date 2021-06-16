@@ -31,7 +31,7 @@ namespace JustDoIt.WebApi.Controllers.v1
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await Mediator.Send(new GetCommentByIdQuery { Id = id }));
+            return Ok(await Mediator.Send(new GetDeskByIdQuery { Id = id }));
         }
 
         // POST api/<controller>

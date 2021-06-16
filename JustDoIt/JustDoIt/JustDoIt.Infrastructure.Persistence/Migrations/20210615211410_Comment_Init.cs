@@ -3,12 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace JustDoIt.Infrastructure.Persistence.Migrations
 {
-    public partial class CommentInt : Migration
+    public partial class Comment_Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-           
-
             migrationBuilder.CreateTable(
                 name: "Comments",
                 columns: table => new
@@ -19,17 +17,17 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     Created = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<string>(nullable: true),
                     LastModified = table.Column<DateTime>(nullable: true),
-                    Title = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
+                    Body = table.Column<string>(nullable: true),
+                    UserId = table.Column<string>(nullable: true),
                     TaskId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Comments_Tasks_TaskId",
+                        name: "FK_Comments_TaskModels_TaskId",
                         column: x => x.TaskId,
-                        principalTable: "Tasks",
+                        principalTable: "TaskModels",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -38,17 +36,12 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                 name: "IX_Comments_TaskId",
                 table: "Comments",
                 column: "TaskId");
-
-            
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-           
             migrationBuilder.DropTable(
                 name: "Comments");
-
-            
         }
     }
 }

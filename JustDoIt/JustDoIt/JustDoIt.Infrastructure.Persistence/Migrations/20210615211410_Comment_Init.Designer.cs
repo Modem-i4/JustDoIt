@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JustDoIt.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210607191134_TaskInit")]
-    partial class TaskInit
+    [Migration("20210615211410_Comment_Init")]
+    partial class Comment_Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,6 +51,41 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.HasIndex("DeskId");
 
                     b.ToTable("Columns");
+                });
+
+            modelBuilder.Entity("JustDoIt.Domain.Entities.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TaskId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TaskId");
+
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("JustDoIt.Domain.Entities.Desk", b =>
@@ -114,6 +149,9 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ParentTaskId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
@@ -123,6 +161,8 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ColumnId");
+
+                    b.HasIndex("ParentTaskId");
 
                     b.ToTable("TaskModels");
                 });
@@ -136,6 +176,15 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("JustDoIt.Domain.Entities.Comment", b =>
+                {
+                    b.HasOne("JustDoIt.Domain.Entities.TaskModel", "Task")
+                        .WithMany()
+                        .HasForeignKey("TaskId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("JustDoIt.Domain.Entities.TaskModel", b =>
                 {
                     b.HasOne("JustDoIt.Domain.Entities.Column", "Column")
@@ -143,6 +192,10 @@ namespace JustDoIt.Infrastructure.Persistence.Migrations
                         .HasForeignKey("ColumnId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("JustDoIt.Domain.Entities.TaskModel", "ParentTask")
+                        .WithMany()
+                        .HasForeignKey("ParentTaskId");
                 });
 #pragma warning restore 612, 618
         }
