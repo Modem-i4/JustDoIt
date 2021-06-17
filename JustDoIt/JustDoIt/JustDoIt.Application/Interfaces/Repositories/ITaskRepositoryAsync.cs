@@ -12,6 +12,6 @@ namespace JustDoIt.Application.Interfaces.Repositories
         Task<IEnumerable<TaskModel>> GetTasksByFilter(GetColumnTasksParameter filter);
         public Task<bool> HasSubtasks(int taskId);
         Task<bool> IsAllSubtaskChecked(int? parentId);
-        //Task<bool> TaskExists(int? taskId);
+        Task<bool> AnyAsync(int taskId);
     }
 }

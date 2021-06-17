@@ -9,8 +9,7 @@ using JustDoIt.Application.Features.Tasks.Queries.GetColumnTasks;
 using JustDoIt.Application.Features.Tasks.Commands.CreateTask;
 using JustDoIt.Application.Features.Tasks.Commands.UpdateTask;
 using JustDoIt.Application.Features.Tasks.Commands.DeleteTaskById;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using JustDoIt.Application.Features.Tasks.Commands.CheckTask;
 
 namespace JustDoIt.WebApi.Controllers.v1
 {

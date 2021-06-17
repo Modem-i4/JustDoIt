@@ -1,21 +1,12 @@
-﻿using JustDoIt.Application.Features.Products.Commands;
+﻿using JustDoIt.Application.Features.Desks.Commands.DeleteProductById;
+using JustDoIt.Application.Features.Desks.Queries.GetProductById;
 using JustDoIt.Application.Features.Products.Commands.CreateProduct;
-using JustDoIt.Application.Features.Products.Commands.DeleteProductById;
 using JustDoIt.Application.Features.Products.Commands.UpdateProduct;
 using JustDoIt.Application.Features.Products.Queries.GetAllProducts;
-using JustDoIt.Application.Features.Products.Queries.GetProductById;
-using JustDoIt.Application.Filters;
 using JustDoIt.Infrastructure.Identity.Features.Users.Commands.AddOwner;
-using JustDoIt.Infrastructure.Identity.Features.Users.Commands.ChangeRole;
 using JustDoIt.Infrastructure.Identity.Features.Users.Commands.SetCurrentDesk;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace JustDoIt.WebApi.Controllers.v1
 {

@@ -15,5 +15,6 @@ namespace JustDoIt.Domain.Entities
         public Column Column { get; set; }
         public int? ParentTaskId { get; set; }
         public TaskModel ParentTask { get; set; }
+        public string AssignedToUserId { get; set; }
     }
 }

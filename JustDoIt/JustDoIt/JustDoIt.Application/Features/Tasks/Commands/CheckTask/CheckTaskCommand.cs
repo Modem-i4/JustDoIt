@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.Tasks.Commands.UpdateTask
+namespace JustDoIt.Application.Features.Tasks.Commands.CheckTask
 {
     public class CheckTaskCommand : IRequest<Response<string>>
     {
@@ -25,14 +25,6 @@ namespace JustDoIt.Application.Features.Tasks.Commands.UpdateTask
             {
                 var task = await _taskRepository.GetByIdAsync(command.Id);
 
-                if (task == null)
-                {
-                    throw new ApiException($"Task Not Found.");
-                }
-                if (_taskRepository.HasSubtasks(task.Id).Result)
-                {
-                    throw new ApiException($"Task cannot be checked.");
-                }                
                 do
                 {
                     task.Checked = !task.Checked;

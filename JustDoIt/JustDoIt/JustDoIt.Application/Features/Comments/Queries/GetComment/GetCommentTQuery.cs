@@ -28,7 +28,6 @@ namespace JustDoIt.Application.Features.Comments.Queries.GetComment
 
         public async Task<Response<IEnumerable<GetCommentTViewModel>>> Handle(GetCommentTQuery request, CancellationToken cancellationToken)
         {
-            //TODO: implify filter
             var validFilter = _mapper.Map<GetCommentTParameter>(request);
             var comment = await _commentRepository.GetCommentByTaskskId(validFilter);
             var commentViewModel = _mapper.Map<IEnumerable<GetCommentTViewModel>>(comment);

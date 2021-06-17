@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.Products.Commands.DeleteProductById
+namespace JustDoIt.Application.Features.Desks.Commands.DeleteProductById
 {
     public class DeleteDeskByIdCommand : IRequest<Response<int>>
     {

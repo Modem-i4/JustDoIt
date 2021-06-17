@@ -25,18 +25,10 @@ namespace JustDoIt.Application.Features.Products.Commands.UpdateProduct
             public async Task<Response<int>> Handle(UpdateDeskCommand command, CancellationToken cancellationToken)
             {
                 var desk = await _deskRepository.GetByIdAsync(command.Id);
-
-                if (desk == null)
-                {
-                    throw new ApiException($"Desk Not Found.");
-                }
-                else
-                {
-                    desk.Title = command.Title;
-                    desk.Description = command.Description;
-                    await _deskRepository.UpdateAsync(desk);
-                    return new Response<int>(desk.Id);
-                }
+                desk.Title = command.Title;
+                desk.Description = command.Description;
+                await _deskRepository.UpdateAsync(desk);
+                return new Response<int>(desk.Id);
             }
         }
     }
