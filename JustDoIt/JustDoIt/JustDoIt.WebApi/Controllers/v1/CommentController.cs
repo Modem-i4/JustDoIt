@@ -9,6 +9,8 @@ using JustDoIt.Application.Features.Comments.Queries.GetComment;
 using JustDoIt.Application.Features.Comments.Commands.CreateComment;
 using JustDoIt.Application.Features.Comments.Commands.UpdateComment;
 using JustDoIt.Application.Features.Comments.Commands.DeleteCommentById;
+using JustDoIt.Application.Attributes;
+using JustDoIt.Application.Enums;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,24 +19,25 @@ namespace JustDoIt.WebApi.Controllers.v1
     [ApiVersion("1.0")]
     public class CommentController : BaseApiController
     {
-        // GET: api/<controller>
+        [Authorize]
+        [DeskRole(DeskRoles.User)]
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetCommentTParameter filter)
         {
             return Ok(await Mediator.Send(new GetCommentTQuery() { TaskId = filter.TaskId }));
         }
 
-        // POST api/<controller>
+        [Authorize]
+        [DeskRole(DeskRoles.User)]
         [HttpPost]
-        //[Authorize]
         public async Task<IActionResult> Post(CreateCommentCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
 
-        // PUT api/<controller>/5
+        [Authorize]
+        [DeskRole(DeskRoles.User)]
         [HttpPut("{id}")]
-        //[Authorize]
         public async Task<IActionResult> Put(int id, UpdateCommentCommand command)
         {
             if (id != command.Id)
@@ -44,9 +47,9 @@ namespace JustDoIt.WebApi.Controllers.v1
             return Ok(await Mediator.Send(command));
         }
 
-        // DELETE api/<controller>/5
+        [Authorize]
+        [DeskRole(DeskRoles.User)]
         [HttpDelete("{id}")]
-        //[Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await Mediator.Send(new DeleteCommentByIdCommand { Id = id }));

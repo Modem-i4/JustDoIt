@@ -4,7 +4,6 @@ using JustDoIt.Application.Features.Columns.Queries.GetDeskColumn;
 using JustDoIt.Application.Features.Comments.Commands.CreateComment;
 using JustDoIt.Application.Features.Comments.Queries.GetComment;
 using JustDoIt.Application.Features.Products.Commands.CreateProduct;
-using JustDoIt.Application.Features.Products.Queries.GetAllProducts;
 using JustDoIt.Application.Features.Tasks.Commands.CreateTask;
 using JustDoIt.Application.Features.Tasks.Queries.GetColumnTasks;
 using JustDoIt.Domain.Entities;
@@ -18,9 +17,7 @@ namespace JustDoIt.Application.Mappings
     {
         public GeneralProfile()
         {
-            CreateMap<Desk, GetAllDesksViewModel>().ReverseMap();
             CreateMap<CreateDeskCommand, Desk>();
-            CreateMap<GetAllDesksQuery, GetAllDesksParameter>();
 
             CreateMap<Column, GetDeskColumnsViewModel>().ReverseMap();
             CreateMap<CreateColumnCommand, Column>();

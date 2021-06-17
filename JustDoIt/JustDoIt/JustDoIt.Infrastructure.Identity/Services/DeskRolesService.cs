@@ -5,6 +5,7 @@ using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Application.Wrappers;
 using JustDoIt.Domain.Entities;
 using JustDoIt.Infrastructure.Identity.Contexts;
+using JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetMyDesks;
 using JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetParticipants;
 using JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetPendingInvitations;
 using JustDoIt.Infrastructure.Identity.Features.Users.Commands.AcceptInvitation;
@@ -164,6 +165,12 @@ namespace JustDoIt.Infrastructure.Shared.Services
         public Task<List<Desk>> GetInvitationsDesks()
         {
             return _deskRoles.Where(o => o.UserId == _userId && o.Role == DeskRoles.Invited)
+                .Select(o => _deskRepository.GetByIdAsync(o.DeskId).Result).ToListAsync();
+        }
+
+        public Task<List<Desk>> GetMyDesks()
+        {
+            return _deskRoles.Where(o => o.UserId == _userId && o.Role > DeskRoles.Invited)
                 .Select(o => _deskRepository.GetByIdAsync(o.DeskId).Result).ToListAsync();
         }
     }

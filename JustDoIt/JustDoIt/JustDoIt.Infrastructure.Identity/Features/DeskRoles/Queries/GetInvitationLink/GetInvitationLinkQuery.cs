@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using JustDoIt.Application.Features.Products.Queries.GetAllProducts;
 using JustDoIt.Application.Interfaces;
 using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Application.Wrappers;

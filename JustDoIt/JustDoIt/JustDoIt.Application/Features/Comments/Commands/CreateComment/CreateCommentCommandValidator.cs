@@ -16,8 +16,9 @@ namespace JustDoIt.Application.Features.Comments.Commands.CreateComment
     public class CreateCommentCommandValidator : AbstractValidator<CreateCommentCommand>
     {
         private readonly ITaskRepositoryAsync _taskRepository;
-        public CreateCommentCommandValidator()
+        public CreateCommentCommandValidator(ITaskRepositoryAsync taskRepository)
         {
+            _taskRepository = taskRepository;
             RuleFor(p => p.Body)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()

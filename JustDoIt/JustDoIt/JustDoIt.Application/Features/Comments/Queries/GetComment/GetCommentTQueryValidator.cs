@@ -16,8 +16,9 @@ namespace JustDoIt.Application.Features.Comments.Queries.GetComment
     public class GetCommentTQueryValidator : AbstractValidator<GetCommentTQuery>
     {
         private readonly ITaskRepositoryAsync _taskRepository;
-        public GetCommentTQueryValidator()
+        public GetCommentTQueryValidator(ITaskRepositoryAsync taskRepository)
         {
+            _taskRepository = taskRepository;
             RuleFor(p => p.TaskId)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()

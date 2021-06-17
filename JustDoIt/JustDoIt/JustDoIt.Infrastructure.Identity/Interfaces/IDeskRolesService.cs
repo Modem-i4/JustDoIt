@@ -1,6 +1,7 @@
 ﻿using JustDoIt.Application.Enums;
 using JustDoIt.Application.Wrappers;
 using JustDoIt.Domain.Entities;
+using JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetMyDesks;
 using JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetParticipants;
 using JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetPendingInvitations;
 using JustDoIt.Infrastructure.Identity.Features.Users.Commands.AcceptInvitation;
@@ -24,6 +25,7 @@ namespace JustDoIt.Application.Interfaces
         Task<Response<string>> AcceptInvitation(AcceptInvitationCommand command);
         Task<bool> AnyAsync(int id);
         Task<UserDeskRole> GetInvitation(int id);
+        Task<List<Desk>> GetMyDesks();
         Task<bool> AnyByFilterAsync(int deskId, string userId);
         Task<bool> HasParticipants(int deskId);
         Task<List<Desk>> GetInvitationsDesks();
