@@ -1,6 +1,7 @@
 ﻿using JustDoIt.Application.Exceptions;
 using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Application.Wrappers;
+using JustDoIt.Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -23,15 +24,16 @@ namespace JustDoIt.Application.Features.Tasks.Commands.CheckTask
             }
             public async Task<Response<string>> Handle(CheckTaskCommand command, CancellationToken cancellationToken)
             {
-                var task = await _taskRepository.GetByIdAsync(command.Id);
-
+                int id = command.Id;
+                TaskModel task;
                 do
                 {
+                    task = await _taskRepository.GetByIdAsync(id);
                     task.Checked = !task.Checked;
                     await _taskRepository.UpdateAsync(task);
-                    task = task.ParentTask;
+                    id = Convert.ToInt32(task.ParentTaskId);
                 }
-                while (task != null && task.Checked && _taskRepository.IsAllSubtaskChecked(task.ParentTaskId).Result);
+                while (task.ParentTaskId != null && task.Checked && _taskRepository.IsAllSubtaskChecked(task.ParentTaskId).Result);
 
                 return new Response<string>($"Task has been inverted") { Succeeded = true, Data = Convert.ToString(command.Id) };
                 

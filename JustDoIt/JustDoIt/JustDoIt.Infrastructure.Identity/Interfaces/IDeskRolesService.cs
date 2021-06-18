@@ -28,6 +28,6 @@ namespace JustDoIt.Application.Interfaces
         Task<List<Desk>> GetMyDesks();
         Task<bool> AnyByFilterAsync(int deskId, string userId);
         Task<bool> HasParticipants(int deskId);
-        Task<List<Desk>> GetInvitationsDesks();
+        Task<List<GetInvitationsViewModel>> GetInvitationsDesks();
     }
 }

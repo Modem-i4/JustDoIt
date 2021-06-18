@@ -23,8 +23,7 @@ namespace JustDoIt.Infrastructure.Identity.Features.DeskRoles.Queries.GetPending
             }
             public async Task<Response<IEnumerable<GetInvitationsViewModel>>> Handle(GetInvitationsQuery query, CancellationToken cancellationToken)
             {
-                var userDeskRoles = await _deskRolesService.GetInvitationsDesks();
-                var participantsViewModel = _mapper.Map<IEnumerable<GetInvitationsViewModel>>(userDeskRoles);
+                var participantsViewModel = await _deskRolesService.GetInvitationsDesks();
                 return new Response<IEnumerable<GetInvitationsViewModel>>(participantsViewModel);
             }
         }

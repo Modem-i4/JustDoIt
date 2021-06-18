@@ -67,7 +67,7 @@ namespace JustDoIt.WebApi.Controllers
         }
         [Authorize]
         [HttpPatch("changeRole")]
-        [DeskRole(DeskRoles.Manager)]
+        [DeskRole(DeskRoles.Owner)]
         public async Task<IActionResult> ChangeRole(ChangeRoleCommand command)
         {
             return Ok(await Mediator.Send(command));

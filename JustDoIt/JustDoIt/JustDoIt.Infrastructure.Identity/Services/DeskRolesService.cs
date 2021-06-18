@@ -162,10 +162,19 @@ namespace JustDoIt.Infrastructure.Shared.Services
             return _deskRoles.FirstOrDefaultAsync(o => o.Id == id);
         }
 
-        public Task<List<Desk>> GetInvitationsDesks()
+        public Task<List<GetInvitationsViewModel>> GetInvitationsDesks()
         {
             return _deskRoles.Where(o => o.UserId == _userId && o.Role == DeskRoles.Invited)
-                .Select(o => _deskRepository.GetByIdAsync(o.DeskId).Result).ToListAsync();
+                .Select(o => new
+                {
+                    Id = o.Id,
+                    Desk = _deskRepository.GetByIdAsync(o.DeskId).Result
+                }).Select(o => new GetInvitationsViewModel
+                {
+                    Id = o.Id,
+                    Title = o.Desk.Title,
+                    Description = o.Desk.Description
+                }).ToListAsync();
         }
 
         public Task<List<Desk>> GetMyDesks()
