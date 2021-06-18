@@ -31,8 +31,6 @@ namespace JustDoIt.Application.Features.Tasks.Commands.CreateTask
                 .NotNull()
                 .MustAsync(ColumnExists).WithMessage("Column does not exist.");
             RuleFor(p => p.ParentTaskId)
-               .NotEmpty().WithMessage("{PropertyName} is required.")
-               .NotNull()
                .MustAsync(HasRequiredParent).WithMessage("Parent task does not exist.");
         }
         private async Task<bool> HasRequiredParent(int? parentId, CancellationToken cancellationToken)

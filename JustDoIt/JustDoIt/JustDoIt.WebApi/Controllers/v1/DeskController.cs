@@ -32,7 +32,6 @@ namespace JustDoIt.WebApi.Controllers.v1
         }
 
         [Authorize]
-        [DeskRole(DeskRoles.User)]
         [HttpPost]
         public async Task<IActionResult> Post(CreateDeskCommand command)
         {

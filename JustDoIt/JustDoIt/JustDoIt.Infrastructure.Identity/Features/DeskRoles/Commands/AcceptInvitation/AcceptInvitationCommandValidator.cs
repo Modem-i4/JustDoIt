@@ -44,7 +44,7 @@ namespace JustDoIt.Infrastructure.Identity.Features.DeskRoles.Commands.AcceptInv
         }
         private bool IsNotAlreadyAMemver(int id)
         {
-            return _role < Application.Enums.DeskRoles.User;
+            return _role > Application.Enums.DeskRoles.User;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace JustDoIt.Application.Features.Tasks.Commands.CheckTask
             RuleFor(p => p.Id)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
-                .MustAsync(HasSubtasks).WithMessage("{PropertyName} can`t be cheked, because it has children.")
+                .Must(DoesntHaveSubtasks).WithMessage("{PropertyName} can`t be cheked, because it has children.")
                 .MustAsync(DoTaskExist).WithMessage("{PropertyName} doesn`t exist.");
         }
 
@@ -30,9 +30,9 @@ namespace JustDoIt.Application.Features.Tasks.Commands.CheckTask
         {
             return _taskRepository.AnyAsync(taskId);
         }
-        public Task<bool> HasSubtasks(int taskId, CancellationToken cancellationToken)
+        public bool DoesntHaveSubtasks(int taskId)
         {
-            return _taskRepository.HasSubtasks(taskId);
+            return !_taskRepository.HasSubtasks(taskId).Result;
         }
     }
 }

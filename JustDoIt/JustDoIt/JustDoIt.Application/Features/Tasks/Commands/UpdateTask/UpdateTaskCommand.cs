@@ -19,6 +19,7 @@ namespace JustDoIt.Application.Features.Tasks.Commands.UpdateTask
         public DateTime EndDate { get; set; }
         public int ColumnId { get; set; }
         public int? ParentTaskId { get; set; }
+        public string AssignedToUserId { get; set; }
 
         public class UpdateTaskCommandHandler : IRequestHandler<UpdateTaskCommand, Response<int>>
         {
@@ -42,6 +43,7 @@ namespace JustDoIt.Application.Features.Tasks.Commands.UpdateTask
                     task.StartDate = command.StartDate;
                     task.EndDate = command.EndDate;
                     task.ParentTaskId = command.ParentTaskId;
+                    task.AssignedToUserId = command.AssignedToUserId;
 
                     await _taskRepository.UpdateAsync(task);
                     return new Response<int>(task.Id);

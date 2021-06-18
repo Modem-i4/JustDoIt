@@ -50,7 +50,8 @@ namespace JustDoIt.Infrastructure.Persistence.Repositories
 
         public Task<bool> HasSubtasks(int taskId)
         {
-            return _tasks.AnyAsync(o => o.ParentTaskId == taskId);
+            var result = _tasks.AnyAsync(o => o.ParentTaskId == taskId);
+            return result;
         }
 
         public Task<bool> IsAllSubtaskChecked(int? parentId)
