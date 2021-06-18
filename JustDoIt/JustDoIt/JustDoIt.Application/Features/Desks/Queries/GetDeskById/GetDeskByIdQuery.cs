@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.Products.Queries.GetProductById
+namespace JustDoIt.Application.Features.Desks.Queries.GetProductById
 {
     public class GetDeskByIdQuery : IRequest<Response<Desk>>
     {

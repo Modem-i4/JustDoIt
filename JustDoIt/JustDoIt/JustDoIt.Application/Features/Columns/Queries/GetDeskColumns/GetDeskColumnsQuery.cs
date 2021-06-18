@@ -27,7 +27,6 @@ namespace JustDoIt.Application.Features.Columns.Queries.GetDeskColumn
 
         public async Task<Response<IEnumerable<GetDeskColumnsViewModel>>> Handle(GetDeskColumnsQuery request, CancellationToken cancellationToken)
         {
-            //TODO: implify filter
             var validFilter = _mapper.Map<GetDeskColumnsParameter>(request);
             var column = await _columnRepository.GetColumnsByDeskId(validFilter);
             var columnViewModel = _mapper.Map<IEnumerable<GetDeskColumnsViewModel>>(column);

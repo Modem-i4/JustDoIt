@@ -9,19 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using JustDoIt.Application.Features.Tasks.Queries.GetColumnTasks;
+using JustDoIt.Application.Interfaces;
 
 namespace JustDoIt.Infrastructure.Persistence.Repositories
 {
     public class TaskRepositoryAsync : GenericRepositoryAsync<TaskModel>, ITaskRepositoryAsync
     {
         private readonly DbSet<TaskModel> _tasks;
+        private readonly string _userId;
 
-        public TaskRepositoryAsync(ApplicationDbContext dbContext) : base(dbContext)
+        public TaskRepositoryAsync(ApplicationDbContext dbContext, IAuthenticatedUserService authenticatedUser) : base(dbContext)
         {
+            _userId = authenticatedUser.UserId;
             _tasks = dbContext.Set<TaskModel>();
         }
 
-       
+        public Task<bool> AnyAsync(int taskId)
+        {
+            return _tasks.AnyAsync(o => o.Id == taskId);
+        }
 
         public async Task<IEnumerable<TaskModel>> GetTasksByFilter(GetColumnTasksParameter filter)
         {
@@ -29,8 +35,12 @@ namespace JustDoIt.Infrastructure.Persistence.Repositories
             switch (filter.TaskMode)
             {
                 case Application.Enums.TaskListModes.ClosestDeadlines:
-                    return await _tasks.Where(o => o.EndDate > DateTime.Now & !o.Checked)
+                    return await _tasks.Where(o => !o.Checked)
                         .OrderBy(o => o.EndDate)
+                        .Take(filter.TAmount)
+                        .ToListAsync();
+                case Application.Enums.TaskListModes.AssignedToMe:
+                    return await _tasks.Where(o => o.AssignedToUserId == _userId && !o.Checked)
                         .Take(filter.TAmount)
                         .ToListAsync();
                 default:
@@ -40,18 +50,13 @@ namespace JustDoIt.Infrastructure.Persistence.Repositories
 
         public Task<bool> HasSubtasks(int taskId)
         {
-            return _tasks.AnyAsync(o => o.ParentTaskId == taskId);
+            var result = _tasks.AnyAsync(o => o.ParentTaskId == taskId);
+            return result;
         }
 
         public Task<bool> IsAllSubtaskChecked(int? parentId)
         {
             return _tasks.Where(o => o.ParentTaskId == parentId).AllAsync(o => o.Checked);
         }
-        /*
-        public Task<bool> TaskExists(int? taskId)
-        {
-            return _tasks.AnyAsync(o => o.Id == taskId);
-        }
-        */
     }
 }

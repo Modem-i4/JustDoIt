@@ -9,39 +9,41 @@ using JustDoIt.Application.Features.Tasks.Queries.GetColumnTasks;
 using JustDoIt.Application.Features.Tasks.Commands.CreateTask;
 using JustDoIt.Application.Features.Tasks.Commands.UpdateTask;
 using JustDoIt.Application.Features.Tasks.Commands.DeleteTaskById;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using JustDoIt.Application.Features.Tasks.Commands.CheckTask;
+using JustDoIt.Application.Attributes;
+using JustDoIt.Application.Enums;
 
 namespace JustDoIt.WebApi.Controllers.v1
 {
     [ApiVersion("1.0")]
     public class TaskController : BaseApiController
     {
-        // GET: api/<controller>
+        [Authorize]
+        [DeskRole(DeskRoles.User)]
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetColumnTasksParameter filter)
         {
             return Ok(await Mediator.Send(new GetColumnTasksQuery() {DeskId = filter.DeskId, TaskMode = filter.TaskMode, TAmount = 5 }));
         }
 
-        // POST api/<controller>
+        [Authorize]
+        [DeskRole(DeskRoles.User)]
         [HttpPost]
-        //[Authorize]
         public async Task<IActionResult> Post(CreateTaskCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
-        // PATCH api/<controller>
+        [Authorize]
+        [DeskRole(DeskRoles.User)]
         [HttpPatch]
-        //[Authorize]
-        public async Task<IActionResult> Check (CheckTaskCommand command)
+        public async Task<IActionResult> Check(CheckTaskCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
 
-        // PUT api/<controller>/5
+        [Authorize]
+        [DeskRole(DeskRoles.User)]
         [HttpPut("{id}")]
-        //[Authorize]
         public async Task<IActionResult> Put(int id, UpdateTaskCommand command)
         {
             if (id != command.Id)
@@ -51,9 +53,9 @@ namespace JustDoIt.WebApi.Controllers.v1
             return Ok(await Mediator.Send(command));
         }
 
-        // DELETE api/<controller>/5
+        [Authorize]
+        [DeskRole(DeskRoles.User)]
         [HttpDelete("{id}")]
-        //[Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await Mediator.Send(new DeleteTaskByIdCommand { Id = id }));

@@ -16,8 +16,6 @@ using JustDoIt.Infrastructure.Identity.Features.Users.Commands.RequestInvite;
 
 namespace JustDoIt.WebApi.Controllers
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
     [ApiVersion("1.0")]
     public class DeskRolesController : BaseApiController
     {
@@ -49,7 +47,7 @@ namespace JustDoIt.WebApi.Controllers
 
         [Authorize]
         [HttpGet("getInviteLink")]
-        [DeskRole(DeskRoles.Manager)]
+        [DeskRole(DeskRoles.User)]
         public async Task<IActionResult> GetInvitationLink(int deskId)
         {
             return Ok(await Mediator.Send(new GetInvitationLinkQuery { DeskId = deskId }));
@@ -69,15 +67,8 @@ namespace JustDoIt.WebApi.Controllers
         }
         [Authorize]
         [HttpPatch("changeRole")]
-        [DeskRole(DeskRoles.Manager)]
+        [DeskRole(DeskRoles.Owner)]
         public async Task<IActionResult> ChangeRole(ChangeRoleCommand command)
-        {
-            return Ok(await Mediator.Send(command));
-        }
-        [Authorize]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        [HttpPost("addOwner")]
-        public async Task<IActionResult> AddOwner(AddOwnerCommand command)
         {
             return Ok(await Mediator.Send(command));
         }

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using JustDoIt.Application.Features.Products.Queries.GetAllProducts;
 using JustDoIt.Application.Interfaces;
 using JustDoIt.Application.Interfaces.Repositories;
 using JustDoIt.Application.Wrappers;
@@ -26,7 +25,7 @@ namespace JustDoIt.Infrastructure.Identity.Features.Users.Queries.GetInvitationL
             }
             public Task<Response<string>> Handle(GetInvitationLinkQuery query, CancellationToken cancellationToken)
             {
-                return Task.FromResult(new Response<string>($"{_context.HttpContext.Request.Host}/invite/{query.DeskId}"));
+                return Task.FromResult(new Response<string>($"{_context.HttpContext.Request.Host}/api/v1/DeskRoles/invite/{query.DeskId}"));
             }
         }
     }

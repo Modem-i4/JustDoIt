@@ -11,27 +11,28 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.Comments.Commands.CreateComment
+namespace JustDoIt.Application.Features.Tasks.Commands.CheckTask
 {
-    public class CreateCommentCommandValidator : AbstractValidator<CreateCommentCommand>
+    public class CheckTaskCommandValidator : AbstractExtendedValidator<CheckTaskCommand>
     {
         private readonly ITaskRepositoryAsync _taskRepository;
-        public CreateCommentCommandValidator(ITaskRepositoryAsync taskRepository)
+        public CheckTaskCommandValidator(ITaskRepositoryAsync taskRepository, IMemoryCache cache) : base(cache)
         {
             _taskRepository = taskRepository;
-            RuleFor(p => p.Body)
+            RuleFor(p => p.Id)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
-                .MaximumLength(1000).WithMessage("{PropertyName} must not exceed 1000 characters.");
-            RuleFor(p => p.TaskId)
-                .NotEmpty().WithMessage("{PropertyName} is required.")
-                .NotNull()
+                .Must(DoesntHaveSubtasks).WithMessage("{PropertyName} can`t be cheked, because it has children.")
                 .MustAsync(DoTaskExist).WithMessage("{PropertyName} doesn`t exist.");
         }
 
         public Task<bool> DoTaskExist(int taskId, CancellationToken cancellationToken)
         {
             return _taskRepository.AnyAsync(taskId);
+        }
+        public bool DoesntHaveSubtasks(int taskId)
+        {
+            return !_taskRepository.HasSubtasks(taskId).Result;
         }
     }
 }

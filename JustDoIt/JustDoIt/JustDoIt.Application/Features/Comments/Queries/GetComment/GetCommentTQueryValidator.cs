@@ -11,18 +11,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JustDoIt.Application.Features.Comments.Commands.CreateComment
+namespace JustDoIt.Application.Features.Comments.Queries.GetComment
 {
-    public class CreateCommentCommandValidator : AbstractValidator<CreateCommentCommand>
+    public class GetCommentTQueryValidator : AbstractValidator<GetCommentTQuery>
     {
         private readonly ITaskRepositoryAsync _taskRepository;
-        public CreateCommentCommandValidator(ITaskRepositoryAsync taskRepository)
+        public GetCommentTQueryValidator(ITaskRepositoryAsync taskRepository)
         {
             _taskRepository = taskRepository;
-            RuleFor(p => p.Body)
-                .NotEmpty().WithMessage("{PropertyName} is required.")
-                .NotNull()
-                .MaximumLength(1000).WithMessage("{PropertyName} must not exceed 1000 characters.");
             RuleFor(p => p.TaskId)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
